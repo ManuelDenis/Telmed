@@ -33,7 +33,7 @@ class CreateUserView(generics.CreateAPIView):
         message += activation_link
 
         smtp_server = settings.EMAIL_HOST
-        smtp_port = 587
+        smtp_port = settings.EMAIL_PORT
         smtp_username = settings.DEFAULT_FROM_EMAIL
         smtp_password = settings.EMAIL_HOST_PASSWORD
 

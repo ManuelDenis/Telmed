@@ -11,16 +11,18 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
-
+from dotenv import load_dotenv
+import os
 from rest_framework.settings import api_settings
 
+load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2xo08qh1jn4+w#h9m&2j@++4kbetw3s(n3!rb!%&o4j4xy1#p*'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -142,10 +144,10 @@ CORS_ALLOW_HEADERS = [
     'Content-Type',
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp-relay.brevo.com"  # smtp-relay.sendinblue.com
-EMAIL_USE_TLS = False  # False
-EMAIL_PORT = "587"  # 587
-EMAIL_HOST_USER = "popescu.manuel.denis@gmail.com"  # your email address
-EMAIL_HOST_PASSWORD = "UYV6JDmKNzqOW9ha"  # your password
-DEFAULT_FROM_EMAIL = "popescu.manuel.denis@gmail.com"
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
