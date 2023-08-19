@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+p {
+  line-height: 1;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 20px !important;
+}
+.navbrand {
+  font-size: 25px !important;
+  font-weight: bold;
+}
+.navbar-brand {
+  color: #dab9f6 !important;
+  font-weight: bolder;
+  font-size: 25px !important;
+}
+.form-label {
+  font-size: 20px !important;
+}

@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import {Button, Col, Container, Row} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 const Login = () => {
     const [msg, setMsg] = useState('');
@@ -31,11 +34,19 @@ const Login = () => {
 
   return (
       <Container>
-        <Row>
-            <Col lg={6}>
-        <h4>Login</h4><p className='text-danger'>{msg}</p>
-        <Form onSubmit={handleSubmit}>
+        <Row className="justify-content-md-center">
+            <Col lg={4}>
+        <h2 className='text-center pb-5'>Login</h2>
+{msg && (
+  <div>
+    <p className='text-warning lead'>
+      <FontAwesomeIcon icon={faExclamationTriangle} className='warning-icon' />{' '}
+      {msg}
+    </p>
+  </div>
+)}        <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
+          <Form.Label>Email</Form.Label>
           <Form.Control
             size="lg"
             type="email"
@@ -46,15 +57,24 @@ const Login = () => {
           />
         </Form.Group>
             <Form.Group className="mb-3">
+          <Form.Label>Password</Form.Label>
           <Form.Control
             size="lg"
             type="password"
             name="password"
-            value={formData.password}
+              value={formData.password}
             onChange={handleChange}
             placeholder="Password"
           />
         </Form.Group>
+                <p><Link to="/PasswordReset">
+                    <strong className="text-info">Forget password?</strong>
+                </Link></p>
+            <p>Don't have an account?
+                <Link to="/register">
+                    <strong className="text-info"> Sign up</strong>
+                </Link>
+            </p>
         <Button type="submit" className="small">
           Login
         </Button>

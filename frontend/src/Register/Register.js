@@ -2,9 +2,14 @@ import React, {useState} from 'react'
 import {Container, Button, Row, Col} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import Login from "../Login/Login";
+import {Link} from "react-router-dom";
 
 
 const Register = () => {
+    const [msg, setMsg] = useState('');
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -20,7 +25,7 @@ const Register = () => {
       });
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred while register!');
+      setMsg(error.response.data.email);
     }
   };
     const handleChange = (e) => {
@@ -33,11 +38,23 @@ const Register = () => {
 
   return (
     <Container>
-        <Row>
-            <Col lg={6}>
-        <h4>Register</h4>
+        <Row className="justify-content-md-center">
+            <Col lg={4}>
+        <h2 className="text-center pb-5">Register</h2>
+
+{msg && (
+  <div>
+    <p className='text-warning lead'>
+      <FontAwesomeIcon icon={faExclamationTriangle} className='warning-icon' />{' '}
+      {msg}
+    </p>
+  </div>
+)}
+
+
         <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3">
+            <Form.Label>Email</Form.Label>
           <Form.Control
             size="lg"
             type="email"
@@ -48,6 +65,7 @@ const Register = () => {
           />
         </Form.Group>
             <Form.Group className="mb-3">
+                <Form.Label>Password</Form.Label>
           <Form.Control
             size="lg"
             type="password"
@@ -57,6 +75,11 @@ const Register = () => {
             placeholder="Password"
           />
         </Form.Group>
+            <p>Already have an account?
+                <Link to="/login">
+                    <strong className="text-info"> Sign in</strong>
+                </Link>
+            </p>
         <Button type="submit" className="small">
           Register
         </Button>

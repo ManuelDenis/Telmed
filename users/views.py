@@ -1,6 +1,9 @@
 from django.contrib.auth import login, get_user_model
+from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views import View
 from rest_framework import generics, permissions, status
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -8,6 +11,7 @@ from knox.views import LoginView as KnoxLoginView
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from djknox import settings
 from users.models import CustomUser
 from users.serializers import UserSerializer, AuthSerializer
@@ -98,3 +102,64 @@ class UserInfoView(RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         user = self.request.user
         return Response({'email': user.email})
+
+
+class CheckEmailExistsView(APIView):
+    def send_reset_password_email(self, email, token):
+        from_email = settings.EMAIL_HOST_USER
+        user = CustomUser.objects.get(email=email)
+        to_email = email
+        subject = "Password reset"
+        message = "Hello, you request a password reset link"
+        message += f"\n\nTo reset password, click the following link:\n"
+        activation_link = f"http://localhost:3000/api/auth/reset-password/{user.id}/{token}"
+        message += activation_link
+
+        smtp_server = settings.EMAIL_HOST
+        smtp_port = settings.EMAIL_PORT
+        smtp_username = settings.DEFAULT_FROM_EMAIL
+        smtp_password = settings.EMAIL_HOST_PASSWORD
+
+        msg = MIMEMultipart()
+        msg["From"] = from_email
+        msg["To"] = to_email
+        msg["Subject"] = subject
+        msg.attach(MIMEText(message, "plain"))
+
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(smtp_username, smtp_password)
+            server.sendmail(from_email, to_email, msg.as_string())
+
+    def post(self, request, *args, **kwargs):
+        email = request.data.get('email')
+
+        try:
+            user = User.objects.get(email=email)
+            token = default_token_generator.make_token(user)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            self.send_reset_password_email(email, token)
+            return Response({'detail': f'A reset password link has been sent to {email}. Check your email to reset your password.'}, status=status.HTTP_200_OK)
+        except User.DoesNotExist:
+            return Response({'detail': 'Email does not exist. Check if email is correct or register for a new account.'}, status=status.HTTP_404_NOT_FOUND)
+
+
+class ResetPasswordView(APIView):
+    def post(self, request, user_id, token, *args, **kwargs):
+        new_password = request.data.get('new_password')
+
+        try:
+            user = User.objects.get(pk=user_id)
+            if default_token_generator.check_token(user, token):
+                user.set_password(new_password)
+                user.save()
+                return Response({'detail': 'Password reset successfully'}, status=status.HTTP_200_OK)
+            else:
+                return Response({'detail': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
+        except User.DoesNotExist:
+            return Response({'detail': 'User does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+
+
