@@ -1,6 +1,6 @@
 from django.contrib.auth import login, get_user_model
 from django.contrib.auth.tokens import default_token_generator
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -21,6 +21,11 @@ from email.mime.text import MIMEText
 from users.token import account_activation_token
 
 User = get_user_model()
+
+
+def front(request):
+    context = {}
+    return render(request, "index.html", context)
 
 
 class CreateUserView(generics.CreateAPIView):
