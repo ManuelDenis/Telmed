@@ -5,7 +5,6 @@ from django.urls import reverse
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views import View
-from django.views.generic import TemplateView
 from rest_framework import generics, permissions, status, viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
@@ -24,8 +23,9 @@ from users.token import account_activation_token
 User = get_user_model()
 
 
-class Front(TemplateView):
-    template_name = "index.html"
+class Front(viewsets.ViewSet):
+    def index(self, request):
+        return render(request, 'index.html')
 
 
 class CreateUserView(generics.CreateAPIView):
