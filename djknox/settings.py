@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2xo08qh1jn4+w#h9m&2j@++4kbetw3s(n3!rb!%&o4j4xy1#p*'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,12 +83,12 @@ WSGI_APPLICATION = 'djknox.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('ENGINEh'),
-        'NAME': os.getenv('NAMEh'),
-        'USER': os.getenv('USERh'),
-        'PASSWORD': os.getenv('PASSWORDh'),
-        'HOST': os.getenv('HOSTh'),
-        'PORT': os.getenv('PORTh'),
+        'ENGINE': os.environ.get('ENGINEh'),
+        'NAME': os.environ.get('NAMEh'),
+        'USER': os.environ.get('USERh'),
+        'PASSWORD': os.environ.get('PASSWORDh'),
+        'HOST': os.environ.get('HOSTh'),
+        'PORT': os.environ.get('PORTh'),
     }
 }
 
@@ -151,12 +151,12 @@ CORS_ALLOW_HEADERS = [
     'Content-Type',
 ]
 
-EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
-EMAIL_PORT = os.getenv('EMAIL_PORT')
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 django_heroku.settings(locals())
