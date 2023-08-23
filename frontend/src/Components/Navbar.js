@@ -69,7 +69,8 @@ function Navbars() {
           >
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+
+            <NavDropdown title="Dropdown" id="basic-navbar-nav">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
