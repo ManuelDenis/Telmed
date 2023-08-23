@@ -38,7 +38,7 @@ class CreateUserView(generics.CreateAPIView):
         subject = "Welcome to our platform"
         message = "Thank you for registering on our platform!"
         message += f"\n\nTo activate your account, click the following link:\n"
-        activation_link = f"http://127.0.0.1:8000/api/auth/activate/{user.id}/{token}"
+        activation_link = f"https://telmed-d9a67f0f6781.herokuapp.com/api/auth/activate/{user.id}/{token}"
         message += activation_link
 
         smtp_server = settings.EMAIL_HOST
@@ -117,7 +117,7 @@ class CheckEmailExistsView(APIView):
         subject = "Password reset"
         message = "Hello, you request a password reset link"
         message += f"\n\nTo reset password, click the following link:\n"
-        activation_link = f"http://localhost:3000/api/auth/reset-password/{user.id}/{token}"
+        activation_link = f"https://telmed-d9a67f0f6781.herokuapp.com/api/auth/reset-password/{user.id}/{token}"
         message += activation_link
 
         smtp_server = settings.EMAIL_HOST
