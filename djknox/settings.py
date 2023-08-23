@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'https://telmed-d9a67f0f6781.herokuapp.com'
+    'http://localhost:3000'
 ]
 ROOT_URLCONF = 'djknox.urls'
 
