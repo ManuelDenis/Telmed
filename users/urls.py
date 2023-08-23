@@ -4,7 +4,11 @@ from users.views import CreateUserView, LoginView, ActivateUserView, UserInfoVie
     ResetPasswordView, Front
 
 urlpatterns = [
-    path("register/", Front.as_view(), name='front'),
+    path("Register/", Front.as_view()),
+    path("Dashboard/", Front.as_view()),
+    path("Login/", Front.as_view()),
+    path("ConfirmationSent/", Front.as_view()),
+    path("PasswordReset/", Front.as_view()),
     path("", Front.as_view(), name='index'),
     path("create/", CreateUserView.as_view(), name="create"),
     path('user_info/', UserInfoView.as_view(), name='user_info'),
