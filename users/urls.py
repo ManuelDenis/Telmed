@@ -4,6 +4,7 @@ from users.views import CreateUserView, LoginView, ActivateUserView, UserInfoVie
     ResetPasswordView, Front
 
 urlpatterns = [
+    path("register/", Front.as_view(), name='front'),
     path("", Front.as_view(), name='index'),
     path("create/", CreateUserView.as_view(), name="create"),
     path('user_info/', UserInfoView.as_view(), name='user_info'),
