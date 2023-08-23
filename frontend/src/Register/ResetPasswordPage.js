@@ -11,7 +11,7 @@ const ResetPasswordPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post(`/api/auth/reset-password/${user_id}/${token}/`, { new_password: newPassword })
+    axios.post(`/reset-password/${user_id}/${token}/`, { new_password: newPassword })
       .then((response) => {
         setMessage(response.data.detail);
       })

@@ -1,10 +1,10 @@
 from django.urls import path
 from knox import views as knox_views
 from users.views import CreateUserView, LoginView, ActivateUserView, UserInfoView, CheckEmailExistsView, \
-    ResetPasswordView, front
+    ResetPasswordView, Front
 
 urlpatterns = [
-    path("", front, name='front'),
+    path("", Front.as_view(), name="front"),
     path("create/", CreateUserView.as_view(), name="create"),
     path('user_info/', UserInfoView.as_view(), name='user_info'),
     path('login/', LoginView.as_view(), name='knox_login'),

@@ -22,7 +22,7 @@ const Login = () => {
     const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('/api/auth/login/', formData)
+      .post('/login/', formData)
       .then((response) => {
         localStorage.setItem('token', response.data.token);
         window.location.href = '/Dashboard';

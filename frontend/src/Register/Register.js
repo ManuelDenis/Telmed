@@ -17,7 +17,7 @@ const Register = () => {
     const handleRegister = async (e) => {
     e.preventDefault();
      try {
-      await axios.post(`/api/auth/create/`, formData);
+      await axios.post(`/create/`, formData);
       window.location.href = '/ConfirmationSent';
       setFormData({
           email: '',

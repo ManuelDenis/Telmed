@@ -9,7 +9,7 @@ const PasswordReset = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('/api/auth/reset-password/email/', { email })
+    axios.post('/reset-password/email/', { email })
       .then((response) => {
         setMessage(response.data.detail);
       })

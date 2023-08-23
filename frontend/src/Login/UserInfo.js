@@ -7,7 +7,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (token) {
-      axios.get('/api/auth/user_info/', {
+      axios.get('/user_info/', {
         headers: {
           Authorization: `Token ${token}`,
         },
