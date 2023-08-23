@@ -28,6 +28,7 @@ function App() {
         <Route path="/api/auth/reset-password/:user_id/:token" element={<ResetPasswordPage/>} />
       </Routes>
       </BrowserRouter>
+            <h3>Application work, page App.js</h3>
         </Row>
     </Container>
   );
