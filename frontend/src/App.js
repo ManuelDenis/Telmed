@@ -25,7 +25,7 @@ function App() {
         <Route path="/ConfirmationSent" element={<ConfirmationSent/>} />
         <Route path="/Login" element={<Login />} />
         <Route path="/PasswordReset" element={<PasswordReset/>} />
-        <Route path="reset-password/:user_id/:token" element={<ResetPasswordPage/>} />
+        <Route path="/reset-password/:user_id/:token" element={<ResetPasswordPage/>} />
       </Routes>
       </BrowserRouter>
         </Row>
