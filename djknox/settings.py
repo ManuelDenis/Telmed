@@ -58,6 +58,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
     'https://telmed-d9a67f0f6781.herokuapp.com'
 ]
+CSRF_TRUSTED_ORIGINS = ['https://telmed-d9a67f0f6781.herokuapp.com']
 
 ROOT_URLCONF = 'djknox.urls'
 
