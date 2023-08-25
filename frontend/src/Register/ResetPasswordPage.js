@@ -14,6 +14,7 @@ const ResetPasswordPage = () => {
     axios.post(`/reset-password/${user_id}/${token}/`, { new_password: newPassword })
       .then((response) => {
         setMessage(response.data.detail);
+        window.location.href = '/PasswordResetConfirmation.js';
       })
       .catch((error) => {
         setMessage(error.response.data.detail);
