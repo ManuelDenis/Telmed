@@ -10,6 +10,7 @@ urlpatterns = [
     path("ConfirmationSent/", Front.as_view()),
     path("PasswordReset/", Front.as_view()),
     path('Reset-password/<int:user_id>/<str:token>/', Front.as_view(), name='reset-password'),
+    path('PasswordResetConfirmation/', Front.as_view()),
     path("", Front.as_view(), name='index'),
     path("create/", CreateUserView.as_view(), name="create"),
     path('user_info/', UserInfoView.as_view(), name='user_info'),
