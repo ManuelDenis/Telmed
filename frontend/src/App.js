@@ -11,6 +11,7 @@ import Navbars from "./Components/Navbar";
 import Login from "./Login/Login";
 import PasswordReset from "./Register/PasswordReset";
 import ResetPasswordPage from "./Register/ResetPasswordPage";
+import PasswordResetConfirmation from "./Register/PasswordResetConfirmation";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/PasswordReset" element={<PasswordReset/>} />
         <Route path="/Reset-password/:user_id/:token" element={<ResetPasswordPage/>} />
+        <Route path="/PasswordResetConfirmation" element={<PasswordResetConfirmation/>} />
       </Routes>
       </BrowserRouter>
         </Row>
