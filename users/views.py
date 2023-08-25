@@ -117,7 +117,7 @@ class CheckEmailExistsView(APIView):
         subject = "Password reset"
         message = "Hello, you request a password reset link"
         message += f"\n\nTo reset password, click the following link:\n"
-        activation_link = f"https://telmed-d9a67f0f6781.herokuapp.com/reset-password/{user.id}/{token}"
+        activation_link = f"https://telmed-d9a67f0f6781.herokuapp.com/Reset-password/{user.id}/{token}"
         message += activation_link
 
         smtp_server = settings.EMAIL_HOST
