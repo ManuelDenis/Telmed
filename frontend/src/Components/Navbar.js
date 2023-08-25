@@ -61,12 +61,8 @@ function Navbars() {
 </Navbar.Toggle>
 
 
-          <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto my-2 my-lg-0">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
 
@@ -81,14 +77,16 @@ function Navbars() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/Register">Register</Nav.Link>
             {token ? (
                 <>
                 <Nav.Link href="#"><strong>{userInfo.email}</strong></Nav.Link>
                 <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
                 </>
             ) : (
+                <>
                 <Nav.Link href="/Login"><strong>Login</strong></Nav.Link>
+                <Nav.Link href="/Register">Register</Nav.Link>
+                </>
             )}
 
 
