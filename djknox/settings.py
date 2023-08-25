@@ -59,12 +59,6 @@ CORS_ORIGIN_WHITELIST = [
     'https://telmed-d9a67f0f6781.herokuapp.com'
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    )
-}
-
 ROOT_URLCONF = 'djknox.urls'
 
 TEMPLATES = [
