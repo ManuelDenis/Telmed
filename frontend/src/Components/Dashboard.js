@@ -24,7 +24,6 @@ const Dashboard = () => {
           <Row className="justify-content-md-center text-center">
               <Col lg={6}>
           <h3>Dashboard</h3>
-          <Button onClick={logout}>Logout</Button>
               </Col>
           </Row>
       </Container>
