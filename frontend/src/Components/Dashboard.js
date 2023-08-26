@@ -23,7 +23,7 @@ const Dashboard = () => {
       <Container>
           <Row className="justify-content-md-center text-center">
               <Col lg={6}>
-          <h3>Dashboard</h3>
+          <h5>Dashboard</h5>
               </Col>
           </Row>
       </Container>

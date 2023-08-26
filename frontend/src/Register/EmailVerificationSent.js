@@ -3,7 +3,7 @@ import React from 'react'
 const EmailVerificationSent = () => {
   return (
     <div>
-      <h3 className="text-white text-2xl font-bold">Email sent for verification</h3>
+      <h5 className="text-white text-2xl font-bold">Email sent for verification</h5>
     </div>
   )
 }

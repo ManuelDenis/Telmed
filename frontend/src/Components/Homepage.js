@@ -6,7 +6,7 @@ const HomePage = () => {
     <Container>
         <Row className="p-3">
             <Col>
-      <h3 className="text-white text-2xl font-bold">HomePage</h3>
+      <h5 className="text-white text-2xl font-bold">HomePage</h5>
             </Col>
         </Row>
     </Container>
