@@ -12,6 +12,7 @@ import Login from "./Login/Login";
 import PasswordReset from "./Register/PasswordReset";
 import ResetPasswordPage from "./Register/ResetPasswordPage";
 import PasswordResetConfirmation from "./Register/PasswordResetConfirmation";
+import PasswordResetLinkConfirmation from "./Register/PasswordResetLinkConfirmation";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/PasswordReset" element={<PasswordReset/>} />
         <Route path="/Reset-password/:user_id/:token" element={<ResetPasswordPage/>} />
         <Route path="/PasswordResetConfirmation" element={<PasswordResetConfirmation/>} />
+        <Route path="/PasswordResetLinkConfirmation" element={<PasswordResetLinkConfirmation />} />
       </Routes>
       </BrowserRouter>
         </Row>

@@ -12,6 +12,7 @@ const PasswordReset = () => {
     axios.post('/reset-password/email/', { email })
       .then((response) => {
         setMessage(response.data.detail);
+        window.location.href = '/PasswordResetLinkConfirmation';
       })
       .catch((error) => {
           setMessage(error.response.data.detail);
@@ -31,7 +32,6 @@ const PasswordReset = () => {
         </div>
         <button type="submit" className="btn btn-primary">Send Reset Link</button>
       </form>
-      <p className="mt-3 text-warning">{message}</p>
             </Col>
         </Row>
       </Container>
