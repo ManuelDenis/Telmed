@@ -58,9 +58,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'https://telmedicine-9365d4641cb0.herokuapp.com'
 ]
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
+CSRF_TRUSTED_ORIGINS = ['https://telmedicine-9365d4641cb0.herokuapp.com']
 
 ROOT_URLCONF = 'djknox.urls'
 
@@ -87,12 +87,12 @@ WSGI_APPLICATION = 'djknox.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINE'),
-        'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': os.environ.get('HOST'),
-        'PORT': os.environ.get('PORT'),
+        'ENGINE': os.environ.get('ENGINEh'),
+        'NAME': os.environ.get('NAMEh'),
+        'USER': os.environ.get('USERh'),
+        'PASSWORD': os.environ.get('PASSWORDh'),
+        'HOST': os.environ.get('HOSTh'),
+        'PORT': os.environ.get('PORTh'),
     }
 }
 
@@ -164,3 +164,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 django_heroku.settings(locals())
+FIXTURE_DIRS = [
+    os.path.join(BASE_DIR, 'fixtures'),  # 'fixtures' este numele directorului cu fixture-uri
+]
