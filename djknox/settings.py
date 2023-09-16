@@ -165,5 +165,5 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 django_heroku.settings(locals())
 FIXTURE_DIRS = [
-    os.path.join(BASE_DIR, 'fixtures'),  # 'fixtures' este numele directorului cu fixture-uri
+    os.path.join(BASE_DIR, 'fixtures'),
 ]
