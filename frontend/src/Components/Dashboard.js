@@ -5,6 +5,7 @@ import {Button, Col, Row} from "react-bootstrap";
 import Logout from "../Login/Logout";
 import Container from "react-bootstrap/Container";
 import 'bootstrap/dist/css/bootstrap.css';
+import ProfileMEdList from "../Medical/ProfileMEdList";
 
 
 const Dashboard = () => {
@@ -15,18 +16,10 @@ const Dashboard = () => {
         Logout()
     }
 
-
-    if(!token){
-        {return <Login />}
-    }
     return (
-      <Container>
-          <Row className="justify-content-md-center text-center">
-              <Col lg={6}>
-          <h5>Dashboard</h5>
-              </Col>
-          </Row>
-      </Container>
+        <>
+          <ProfileMEdList />
+        </>
   )
 }
 

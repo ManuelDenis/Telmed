@@ -12,20 +12,19 @@ const Login = () => {
         username: '',
         password: '',
      });
-     const handleChange = (e) => {
+    const handleChange = (e) => {
         setFormData({
         ...formData,
         [e.target.name]: e.target.value
         });
      };
-
     const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post('/login/', formData)
       .then((response) => {
         localStorage.setItem('token', response.data.token);
-        window.location.href = '/Dashboard';
+        window.location.href = '/Category';
       })
       .catch((error) => {
       setMsg(error.response.data.non_field_errors);

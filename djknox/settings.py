@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'corsheaders',
+    'medical.apps.MedicalConfig',
+    'questions.apps.QuestionsConfig',
 ]
 
 AUTH_USER_MODEL = "users.CustomUser"
@@ -56,9 +58,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'https://telmed-d9a67f0f6781.herokuapp.com'
+    'http://localhost:3000'
 ]
-CSRF_TRUSTED_ORIGINS = ['https://telmed-d9a67f0f6781.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 
 ROOT_URLCONF = 'djknox.urls'
 
@@ -85,12 +87,12 @@ WSGI_APPLICATION = 'djknox.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINEh'),
-        'NAME': os.environ.get('NAMEh'),
-        'USER': os.environ.get('USERh'),
-        'PASSWORD': os.environ.get('PASSWORDh'),
-        'HOST': os.environ.get('HOSTh'),
-        'PORT': os.environ.get('PORTh'),
+        'ENGINE': os.environ.get('ENGINE'),
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': os.environ.get('HOST'),
+        'PORT': os.environ.get('PORT'),
     }
 }
 

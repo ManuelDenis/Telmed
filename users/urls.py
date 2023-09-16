@@ -6,6 +6,10 @@ from users.views import CreateUserView, LoginView, ActivateUserView, UserInfoVie
 urlpatterns = [
     path("Register/", Front.as_view()),
     path("Dashboard/", Front.as_view()),
+    path("ProfileMed/", Front.as_view()),
+    path("ProfileMedList/", Front.as_view()),
+    path("ProfileMedRegister/", Front.as_view()),
+    path("ProfileMedUpdate/", Front.as_view()),
     path("Login/", Front.as_view()),
     path("ConfirmationSent/", Front.as_view()),
     path("PasswordReset/", Front.as_view()),
@@ -13,6 +17,7 @@ urlpatterns = [
     path('PasswordResetConfirmation/', Front.as_view()),
     path('PasswordResetLinkConfirmation/', Front.as_view()),
     path("", Front.as_view(), name='index'),
+
     path("create/", CreateUserView.as_view(), name="create"),
     path('user_info/', UserInfoView.as_view(), name='user_info'),
     path('login/', LoginView.as_view(), name='knox_login'),

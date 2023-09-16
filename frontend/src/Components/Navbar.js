@@ -6,12 +6,23 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import Logout from "../Login/Logout";
 import '../App.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 function Navbars() {
     const [userInfo, setUserInfo] = useState({});
+    const [profile, setProfile] = useState({});
     const [token, setToken] = useState(localStorage.getItem('token'));
 
+    const getProfile = async () => {
+    axios.get('/medical/profile-med/0/', {headers: {Authorization: `Token ${token}`}})
+      .then((response) => {
+        setProfile(response.data);
+      })
+      .catch((error) => {
+        console.error('Eroare la preluarea datelor de profil:', error);
+      });
+    };
     useEffect(() => {
     if (token) {
       axios.get('/user_info/', {
@@ -21,6 +32,7 @@ function Navbars() {
       })
       .then(response => {
         setUserInfo(response.data);
+        getProfile();
       })
       .catch(error => {
         console.error('Eroare la obținerea informațiilor utilizatorului:', error);
@@ -31,6 +43,7 @@ function Navbars() {
         localStorage.removeItem('token');
         setToken(null);
         setUserInfo({});
+        setProfile({});
         window.location.reload();
         Logout()
     }
@@ -39,7 +52,7 @@ function Navbars() {
   return (
     <Navbar expand="lg" className="mb-5">
       <Container>
-        <Navbar.Brand href="/">HomeApp</Navbar.Brand>
+        <Navbar.Brand href="/">TelMed</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -62,24 +75,35 @@ function Navbars() {
 
 
           <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto my-2 my-lg-0">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
+          <Nav className="me-auto my-lg-0">
+            <Nav.Link href="/Question">Q&Ans</Nav.Link>
+            <Nav.Link href="/Category">Categories</Nav.Link>
+            <Nav.Link href="/ProfileMedList">Medici</Nav.Link>
 
-            <NavDropdown title="Dropdown" id="basic-navbar-nav">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            {userInfo.email ? (
+                <>
+            <NavDropdown title="Account" id="basic-nav-dropdown">
+                {profile.user ? (
+                    <>
+              <NavDropdown.Item href="/ProfileMedUpdate">
+                  Update profil
               </NavDropdown.Item>
+              <NavDropdown.Item href="/ProfileMed">
+                  Profilul tau
+              </NavDropdown.Item>
+                    </>
+                ) : (
+              <NavDropdown.Item href="/ProfileMedRegister">
+                  Creeaza profil medic
+              </NavDropdown.Item>
+                )}
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="#">
+                {userInfo.email}
               </NavDropdown.Item>
             </NavDropdown>
-            {token ? (
-                <>
-                <Nav.Link href="#"><strong>{userInfo.email}</strong></Nav.Link>
+
                 <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
                 </>
             ) : (

@@ -1,0 +1,313 @@
+[{
+		"model": "medical.category",
+		"pk": 1,
+		"fields": {
+			"name": "Angiologie",
+			"description": "Angiologia este specialitatea medicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor sistemului vascular, inclusiv ale venelor și arterelor."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 2,
+		"fields": {
+			"name": "Cardiologie",
+			"description": "Cardiologia se concentrează asupra diagnosticării și managementului afecțiunilor sistemului cardiovascular, inclusiv bolilor inimii."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 3,
+		"fields": {
+			"name": "Chirurgie generala",
+			"description": "Chirurgia generală implică intervenții chirurgicale pentru o gamă variată de afecțiuni și probleme de sănătate, cum ar fi apendicita sau hernia."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 4,
+		"fields": {
+			"name": "Dermatologie",
+			"description": "Dermatologia este specialitatea medicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor pielii, părului și unghiilor."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 5,
+		"fields": {
+			"name": "Gastroenterologie",
+			"description": "Gastroenterologia se axează pe diagnosticarea și tratamentul bolilor sistemului digestiv, precum stomacul, intestinul și ficatul."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 6,
+		"fields": {
+			"name": "Ginecologie",
+			"description": "Ginecologia este specialitatea care se ocupă de sănătatea feminină, inclusiv a organelor reproductive și a altor aspecte legate de sistemul reproductiv."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 7,
+		"fields": {
+			"name": "Imunologie",
+			"description": "Imunologia este specialitatea care studiază sistemul imunitar al organismului și răspunsurile sale la agenții patogeni și alte substanțe străine."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 8,
+		"fields": {
+			"name": "Infectioase si Microbiologie",
+			"description": "Specialitatea Infectioase și Microbiologie se concentrează asupra diagnosticării, tratamentului și prevenirii bolilor infecțioase cauzate de agenți patogeni, inclusiv microbi."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 9,
+		"fields": {
+			"name": "Medicina Interna",
+			"description": "Medicina Interna sau medicina internistă este specialitatea care se ocupă cu diagnosticarea și tratamentul bolilor adulte non-chirurgicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 10,
+		"fields": {
+			"name": "Neonatologie",
+			"description": "Neonatologia este ramura medicinii care se ocupă cu îngrijirea medicală a nou-născuților, în special a celor născuți prematur sau cu probleme medicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 11,
+		"fields": {
+			"name": "Neurochirurgie",
+			"description": "Neurochirurgia este specialitatea chirurgicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor sistemului nervos central și periferic."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 12,
+		"fields": {
+			"name": "Neurologie",
+			"description": "Neurologia se axează pe diagnosticarea și tratamentul afecțiunilor sistemului nervos, inclusiv a bolilor care afectează creierul, măduva spinării și nervii."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 13,
+		"fields": {
+			"name": "Oftalmologie",
+			"description": "Oftalmologia este specialitatea medicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor ochilor și a problemelor de vedere."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 14,
+		"fields": {
+			"name": "ORL",
+			"description": "ORL (otorinolaringologia) se concentrează pe diagnosticarea și tratamentul afecțiunilor urechii, nasului și gâtului, inclusiv a problemelor de auz și respirație."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 15,
+		"fields": {
+			"name": "Ortopedie si Traumatologie",
+			"description": "Ortopedia și traumatologia se ocupă cu diagnosticarea și tratamentul problemelor legate de oase, articulații și țesuturile moi, precum și a traumelor musculo-scheletice."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 16,
+		"fields": {
+			"name": "Pediatrie",
+			"description": "Pediatria se axează pe îngrijirea medicală a copiilor, de la nou-născuți până la adolescență, și pe diagnosticarea și tratamentul problemelor de sănătate specifice acestui grup de vârstă."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 17,
+		"fields": {
+			"name": "Pneumologie",
+			"description": "Pneumologia se concentrează pe diagnosticarea și tratamentul afecțiunilor sistemului respirator, inclusiv a bolilor plămânilor și a căilor respiratorii."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 18,
+		"fields": {
+			"name": "Psychiatrie si Psychosomatica",
+			"description": "Psychiatria se ocupă cu diagnosticarea, tratamentul și prevenirea bolilor mintale și tulburărilor psihologice, iar psychosomatica explorează legăturile dintre minte și corp."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 19,
+		"fields": {
+			"name": "Radiologie",
+			"description": "Radiologia se concentrează pe utilizarea imaginilor medicale, precum radiografiile și scanările, pentru a diagnostica și trata diferite afecțiuni medicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 20,
+		"fields": {
+			"name": "Urologie si Nefrologie",
+			"description": "Urologia se axează pe diagnosticarea și tratamentul afecțiunilor sistemului urinar și a organelor reproductive masculine, în timp ce nefrologia se ocupă de boli renale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 21,
+		"fields": {
+			"name": "Endocrinologie",
+			"description": "Endocrinologia se concentrează pe sistemul endocrin, care reglează hormonii și funcțiile metabolice ale organismului, și pe diagnosticarea și tratamentul afecțiunilor hormonale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 22,
+		"fields": {
+			"name": "Medicina muncii",
+			"description": "Medicina muncii se ocupă cu sănătatea și siguranța la locul de muncă, inclusiv cu diagnosticarea și prevenirea problemelor de sănătate legate de ocupație."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 23,
+		"fields": {
+			"name": "Gerontologie",
+			"description": "Gerontologia se axează pe îmbătrânirea și sănătatea populației vârstnice, explorând aspectele fizice, psihologice și sociale ale procesului de îmbătrânire."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 24,
+		"fields": {
+			"name": "ATI",
+			"description": "ATI (Anestezie și Terapie Intensivă) se ocupă de gestionarea pacienților critici și de administrarea anesteziei înainte, în timpul și după intervențiile chirurgicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 25,
+		"fields": {
+			"name": "Hematologie si Hematooncologie",
+			"description": "Hematologia se concentrează pe studiul sângelui și a afecțiunilor asociate, în timp ce hematooncologia se ocupă de cancerele sistemului sanguin și limfatic."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 26,
+		"fields": {
+			"name": "Nutritie",
+			"description": "Nutriția se axează pe studiul alimentelor și al nutrienților, precum și pe gestionarea dietei pentru a menține sănătatea și a trata diferite afecțiuni medicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 27,
+		"fields": {
+			"name": "Medicina legala",
+			"description": "Medicina legală aplică principiile medicale în domeniul juridic, investigând cauzele deceselor, efectele drogurilor sau alcoolului asupra corpului etc."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 28,
+		"fields": {
+			"name": "Genetica",
+			"description": "Genetica medicală analizează ereditatea și genele în relație cu bolile și tulburările medicale, ajutând la diagnostic și la înțelegerea predispozițiilor genetice."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 29,
+		"fields": {
+			"name": "Nefrologie",
+			"description": "Nefrologia se axează pe diagnosticarea și tratamentul afecțiunilor sistemului renal (rinichi), inclusiv a bolilor renale și a afecțiunilor sistemului urinar."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 30,
+		"fields": {
+			"name": "Neonatologie",
+			"description": "Neonatologia este ramura medicinii care se ocupă cu îngrijirea medicală a nou-născuților, în special a celor născuți prematur sau cu probleme medicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 31,
+		"fields": {
+			"name": "Nutritie",
+			"description": "Nutriția se axează pe studiul alimentelor și al nutrienților, precum și pe gestionarea dietei pentru a menține sănătatea și a trata diferite afecțiuni medicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 32,
+		"fields": {
+			"name": "Oftalmologie",
+			"description": "Oftalmologia este specialitatea medicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor ochilor și a problemelor de vedere."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 33,
+		"fields": {
+			"name": "ORL",
+			"description": "ORL (otorinolaringologia) se concentrează pe diagnosticarea și tratamentul afecțiunilor urechii, nasului și gâtului, inclusiv a problemelor de auz și respirație."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 34,
+		"fields": {
+			"name": "Ortopedie si Traumatologie",
+			"description": "Ortopedia și traumatologia se ocupă cu diagnosticarea și tratamentul problemelor legate de oase, articulații și țesuturile moi, precum și a traumelor musculo-scheletice."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 35,
+		"fields": {
+			"name": "Pediatrie",
+			"description": "Pediatria se axează pe îngrijirea medicală a copiilor, de la nou-născuți până la adolescență, și pe diagnosticarea și tratamentul problemelor de sănătate specifice acestui grup de vârstă."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 36,
+		"fields": {
+			"name": "Pneumologie",
+			"description": "Pneumologia se concentrează pe diagnosticarea și tratamentul afecțiunilor sistemului respirator, inclusiv a bolilor plămânilor și a căilor respiratorii."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 37,
+		"fields": {
+			"name": "Psychiatrie si Psychosomatica",
+			"description": "Psychiatria se ocupă cu diagnosticarea, tratamentul și prevenirea bolilor mintale și tulburărilor psihologice, iar psychosomatica explorează legăturile dintre minte și corp."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 38,
+		"fields": {
+			"name": "Radiologie",
+			"description": "Radiologia se concentrează pe utilizarea imaginilor medicale, precum radiografiile și scanările, pentru a diagnostica și trata diferite afecțiuni medicale."
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 39,
+		"fields": {
+			"name": "Urologie si Nefrologie",
+			"description": "Urologia se axează pe diagnosticarea și tratamentul afecțiunilor sistemului urinar și a organelor reproductive masculine, în timp ce nefrologia se ocupă de boli renale."
+		}
+	}
+]

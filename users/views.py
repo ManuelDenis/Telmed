@@ -6,7 +6,8 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views import View
 from django.views.generic import TemplateView
-from rest_framework import generics, permissions, status
+from knox.auth import TokenAuthentication
+from rest_framework import generics, permissions, status, viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
 from rest_framework.generics import RetrieveAPIView
@@ -14,12 +15,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from djknox import settings
-from users.models import CustomUser
-from users.serializers import UserSerializer, AuthSerializer
+from users.models import CustomUser, ProfileMed, DoctorVote
+from users.serializers import UserSerializer, AuthSerializer, ProfileMedSerializer, DoctorVoteSerializer, \
+    ProfileMedSerializer2
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from users.token import account_activation_token
+from rest_framework.exceptions import PermissionDenied
 
 User = get_user_model()
 
@@ -165,6 +168,42 @@ class ResetPasswordView(APIView):
             return Response({'detail': 'User does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
 
+class ProfileMedViewSet(viewsets.ModelViewSet):
+    queryset = ProfileMed.objects.all()
+    serializer_class = ProfileMedSerializer
 
 
+class CreateProfileMedViewSet(viewsets.ModelViewSet):
+    queryset = ProfileMed.objects.all()
+    serializer_class = ProfileMedSerializer2
+    permission_classes = [IsAuthenticated]
+    http_method_names = ['post', ]
 
+    def perform_create(self, serializer):
+        userinfo = CustomUser.objects.get(email=self.request.user.email)
+        serializer.validated_data['user'] = userinfo
+        serializer.save()
+
+
+class ProfileUpdate(viewsets.ModelViewSet):
+    queryset = ProfileMed.objects.all()
+    serializer_class = ProfileMedSerializer2
+    permission_classes = [IsAuthenticated]
+    http_method_names = ['patch', ]
+
+    def perform_update(self, serializer):
+        userinfo = CustomUser.objects.get(email=self.request.user.email)
+        serializer.validated_data['user'] = userinfo
+        serializer.save()
+
+
+class Profile(viewsets.ModelViewSet):
+    queryset = ProfileMed.objects.all()
+    serializer_class = ProfileMedSerializer
+    permission_classes = [IsAuthenticated]
+
+    def retrieve(self, request, *args, **kwargs):
+        userinfo = CustomUser.objects.get(email=self.request.user.email)
+        instance = ProfileMed.objects.get(user=userinfo)
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)

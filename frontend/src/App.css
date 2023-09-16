@@ -36,26 +36,58 @@
     transform: rotate(360deg);
   }
 }
-
+p, h2, h4, h5, h6, a, li, ul {
+  font-family: Montserrat, sans-serif;
+}
+h1, h3 {
+  font-family: Kanit, sans-serif;
+  color: #e1f7fc !important;
+}
 p {
   line-height: 1;
   font-weight: 200;
   font-size: 20px;
 }
-
+.navbar {
+  border-radius: 0 0 15px 15px !important;
+  background: rgba(178, 249, 252, 0.99);
+}
 .nav-link {
-  color: white !important;
+  background: orangered;
+  color: #090000 !important;
   font-size: 17px !important;
 }
 .navbrand {
   font-size: 25px !important;
-  font-weight: bold;
+  font-weight: bold;;
 }
 .navbar-brand {
-  color: #dab9f6 !important;
+  color: #fc4444 !important;
   font-weight: bolder;
   font-size: 25px !important;
 }
 .form-label {
   font-size: 20px !important;
+}
+.card {
+  background: rgba(107, 98, 2, 0.15) !important;
+  border-radius: 20px !important;
+}
+.badge-right {
+  margin-left: auto;
+}
+.header-text {
+  color: #3b0264;
+}
+.offcanvas {
+  background-image: linear-gradient(#c5e5fc, #ecf5f5);
+}
+.first-row {
+  padding-bottom: 100px;
+  background-image: linear-gradient(rgba(250, 4, 16, 0.99), rgba(245, 245, 245, 0));
+}
+.custom-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

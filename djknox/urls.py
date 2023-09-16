@@ -16,8 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from medical.views import CategoryViewSet
+from questions.views import QuestionViewSet, CreateQuestionViewSet, CreateAnswerViewSet, QuestionMedViewSet, \
+    QuestionUserViewSet, AnswerVoteCreateView
+from users.views import ProfileMedViewSet, CreateProfileMedViewSet, Profile, ProfileUpdate
+
+router = DefaultRouter()
+router.register(r'category', CategoryViewSet)
+router.register(r'question', QuestionViewSet)
+router.register(r'profiles', ProfileMedViewSet, 'profile')
+router.register(r'profile-med-create', CreateProfileMedViewSet)
+router.register(r'profile-med', Profile)
+router.register(r'profile-update', ProfileUpdate)
+router.register(r'question-create', CreateQuestionViewSet)
+router.register(r'answers-create', CreateAnswerViewSet)
+router.register(r'question-med', QuestionMedViewSet, 'question-med')
+router.register(r'question-user', QuestionUserViewSet, 'question-user')
+router.register(r'answer-vote-create', AnswerVoteCreateView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
+    path('medical/', include(router.urls)),
+    path('med/', include('medical.urls')),
+    path('questions/', include('questions.urls')),
 ]

@@ -1,6 +1,27 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
-from users.models import CustomUser
+
+from questions.models import AnswerVote, Answer
+from questions.serializers import AnswerSerializer
+from users.models import CustomUser, ProfileMed, CommentProfileMed, DoctorVote
+
+
+class DoctorVoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DoctorVote
+        fields = '__all__'
+
+
+class CommentProfileMedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CommentProfileMed
+        fields = '__all__'
+
+
+class ProfileMedSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = ProfileMed
+        fields = ('name', 'category', 'job_title', 'company', 'rating')
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -11,6 +32,32 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return CustomUser.objects.create_user(**validated_data)
+
+
+class ProfileMedSerializer(serializers.ModelSerializer):
+    profile_comments = CommentProfileMedSerializer(many=True, read_only=True)
+    total_votes = serializers.SerializerMethodField()
+    average_rating = serializers.SerializerMethodField()
+    answer_med = AnswerSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = ProfileMed
+        fields = ('id', 'user', 'name', 'category', 'job_title', 'company', 'profile_comments', 'total_votes', 'average_rating', 'rating', 'answer_med')
+
+    def get_total_votes(self, profile):
+        answer_vote = AnswerVote.objects.filter(answer__med=profile).count()
+        return answer_vote
+
+    def get_average_rating(self, profile):
+        answer_vote = AnswerVote.objects.filter(answer__med=profile)
+        totalvotes = answer_vote.count()
+
+        if totalvotes > 0:
+            ratingsum = sum([vote.vote for vote in answer_vote])
+            averages = ratingsum / totalvotes
+            return format(averages, ".2f")
+
+        return "0.00"
 
 
 class PasswordSerializer(serializers.ModelSerializer):

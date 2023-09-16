@@ -1,0 +1,352 @@
+[{
+		"model": "medical.category",
+		"pk": 1,
+		"fields": {
+			"name": "Angiologie",
+			"description": "Angiologia este specialitatea medicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor sistemului vascular, inclusiv ale venelor și arterelor.",
+			"dis": "Boala arterială periferică, Tromboza venoasă profundă, Anevrism aortic, Ateroscleroză, Flebită, Hipertensiune arterială, Insuficiență venoasă cronică, Embolie pulmonară, Boala Raynaud, Ulcer varicos, Arterită, Sindromul antifosfolipidic, Vasculită, Coagulare intravasculară diseminată, Angiodisplazie"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 2,
+		"fields": {
+			"name": "Cardiologie",
+			"description": "Cardiologia se concentrează asupra diagnosticării și managementului afecțiunilor sistemului cardiovascular, inclusiv bolilor inimii.",
+			"dis": "Boala coronariană, Insuficiență cardiacă, Aritmii, Infarct miocardic, Hipertensiune arterială, Valvulopatii, Endocardită, Miocardită, Cardiomiopatie, Anevrism de aortă, Tromboembolism pulmonar, Endocardită infectioasă, Displazie de valvă mitrală, Cardiopatie ischemică, Stenoză aortică"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 3,
+		"fields": {
+			"name": "Chirurgie generala",
+			"description": "Chirurgia generală implică intervenții chirurgicale pentru o gamă variată de afecțiuni și probleme de sănătate, cum ar fi apendicita sau hernia.",
+			"dis": "Apendicită, Hernie, Colecistită, Pancreatită, Diverticulită, Colon iritabil, Peritonită, Cancer colorectal, Ulcer gastric, Gastrită, Hemoragie digestivă, Sindromul intestinului iritabil, Litiază biliară, Diverticuloză, Abces perianal"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 4,
+		"fields": {
+			"name": "Dermatologie",
+			"description": "Dermatologia este specialitatea medicală care se ocupă cu diagnosticarea și tratamentul afecțiunilor pielii, părului și unghiilor.",
+			"dis": "Acnee, Eczemă, Dermatită, Psoriazis, Urticarie, Micoze cutanate, Melanom, Verruci, Lupus eritematos sistemic, Vitiligo, Alopecie, Cancer de piele, Moluscum contagiosum"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 5,
+		"fields": {
+			"name": "Endocrinologie",
+			"description": "Endocrinologia se concentrează pe diagnosticarea și tratarea afecțiunilor sistemului endocrin, inclusiv a glandelor și a hormonilor.",
+			"dis": "Diabet zaharat, Hipotiroidism, Hipertiroidism, Boala lui Cushing, Boala Addison, Tiroidită, Hipoparatiroidism, Sindrom metabolic, Acromegalie, Hipopituitarism, Hiperparatiroidism, Tumori endocrine"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 6,
+		"fields": {
+			"name": "Gastroenterologie",
+			"description": "Gastroenterologia se ocupă cu diagnosticul și tratamentul afecțiunilor sistemului digestiv, inclusiv a esofagului, stomacului, ficatului și intestinelor.",
+			"dis": "Boala de reflux gastroesofagian, Ulcer gastric, Hepatită, Ciroză, Colecistită, Gastrită, Colită ulcerativă, Boala Crohn, Sindrom de intestin iritabil, Hemoragie digestivă, Pancreatită, Diverticulită, Polipi colorectali, Boală celiacă"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 7,
+		"fields": {
+			"name": "Genetica",
+			"description": "Genetica medicală se concentrează pe studiul eredității și al genelor pentru a diagnostica și trata afecțiuni medicale determinate genetic.",
+			"dis": "Boală genetică, Sindrom Down, Hemofilie, Fibroză chistică, Tulburări cromozomiale, Siclemia, Neurofibromatoza, Sindromul Marfan, Boală Wilson, Distrofie musculară"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 8,
+		"fields": {
+			"name": "Hematologie si Hematooncologie",
+			"description": "Hematologia se ocupă cu studiul sângelui și a afecțiunilor sale, iar hematooncologia se concentrează pe cancerele sângelui, cum ar fi leucemia.",
+			"dis": "Anemie, Leucemie, Limfom, Mielom multiplu, Trombocitopenie, Hemofilie, Talasemie, Policitemie vera, Coagulopatie, Leucopenie"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 9,
+		"fields": {
+			"name": "Imunologie",
+			"description": "Imunologia se ocupă cu studiul sistemului imunitar și a răspunsului acestuia la infecții și afecțiuni autoimune.",
+			"dis": "Imunodeficiențe primare și secundare, Alergii, Lupus eritematos sistemic, Artrită reumatoidă, Scleroză multiplă, Boala Crohn, Colită ulcerativă, Psoriazis, Diabet zaharat tip 1"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 10,
+		"fields": {
+			"name": "Infectioase si Microbiologie",
+			"description": "Infectiologia se ocupă cu diagnosticul, tratarea și prevenirea bolilor infecțioase, cauzate de bacterii, virusuri, fungi și paraziți.",
+			"dis": "HIV/SIDA, Hepatită, Tuberculoză, Malarie, Infecții respiratorii, Infecții urinare, Infecții cutanate, Gastroenterite infecțioase, Meningită, Sepsis"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 11,
+		"fields": {
+			"name": "Medicina Interna",
+			"description": "Medicina internă se axează pe diagnosticul și tratamentul afecțiunilor medicale complexe ale adulților.",
+			"dis": "Diabet zaharat, Hipertensiune arterială, Boli cardiovasculare, Boli pulmonare, Boli gastrointestinale, Boli renale, Boli hepatice, Boli endocrine, Boli infecțioase, Afecțiuni autoimune, Boli hematologice"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 12,
+		"fields": {
+			"name": "Neurochirurgie",
+			"description": "Neurochirurgia se concentrează pe intervențiile chirurgicale pentru afecțiunile sistemului nervos central și periferic.",
+			"dis": "Tumori cerebrale, Hernie de disc, Malformații ale sistemului nervos, Hemoragii cerebrale, Epilepsie, Trigemen neuralgie, Siringomielie, Neurofibromatoză, Paralizie cerebrală"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 13,
+		"fields": {
+			"name": "Neurologie",
+			"description": "Neurologia se ocupă cu diagnosticul și tratamentul afecțiunilor sistemului nervos, inclusiv ale creierului, măduvei spinării și nervilor periferici.",
+			"dis": "Migrene, Boala Parkinson, Scleroza multiplă, Epilepsie, Accident vascular cerebral, Neuropatie periferică, Dystonie, Alzheimer, Afecțiuni ale nervilor cranieni, Paralizie cerebrală"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 14,
+		"fields": {
+			"name": "ORL",
+			"description": "ORL-ul (Otorinolaringologia) se ocupă cu diagnosticul și tratamentul afecțiunilor urechii, nasului și gâtului.",
+			"dis": "Sinuzită, Otita, Rinită alergică, Apnee de somn, Polipi nazali, Surditate, Tinitus, Amigdalită, Laringită, Cancer de gât"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 15,
+		"fields": {
+			"name": "Oftalmologie",
+			"description": "Oftalmologia se axează pe diagnosticul și tratamentul afecțiunilor ochilor și a problemelor de vedere.",
+			"dis": "Miopie, Hipermetropie, Astigmatism, Cataractă, Glaucom, Degenerescență maculară, Retinopatie diabetică, Strabism, Sindromul ochiului uscat, Conjunctivită, Uveită"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 16,
+		"fields": {
+			"name": "Ortopedie si Traumatologie",
+			"description": "Ortopedia se ocupă cu diagnosticul și tratamentul afecțiunilor sistemului musculo-scheletic, inclusiv ale oaselor, articulațiilor și mușchilor.",
+			"dis": "Fracturi osoase, Luxații, Tendinită, Artrită, Hernie de disc, Scolioză, Osteoporoză, Artroplastie, Entorsă, Ruptură de ligament"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 17,
+		"fields": {
+			"name": "Pediatrie",
+			"description": "Pediatria se concentrează pe sănătatea și afecțiunile copiilor și adolescenților, de la naștere până la vârsta de 18 ani.",
+			"dis": "Infecții respiratorii, Otită, Febră, Vaccinări, Alimentație sănătoasă, Dezvoltare copii, Autism, ADHD, Alergii, Diabet zaharat tip 1, Leucemie"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 18,
+		"fields": {
+			"name": "Pneumologie",
+			"description": "Pneumologia se axează pe diagnosticul și tratamentul afecțiunilor sistemului respirator, inclusiv ale plămânilor și căilor respiratorii.",
+			"dis": "Pneumonie, Bronșită, Astm, BPOC (boală pulmonară obstructivă cronică), Tuberculoză, Embolie pulmonară, Fibroză pulmonară, Apnee de somn, Pneumotorax, Sarcoidoză"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 19,
+		"fields": {
+			"name": "Psihiatrie si Psychosomatica",
+			"description": "Psihiatria se concentrează pe diagnosticul și tratamentul afecțiunilor mentale, iar psihosomatica studiază interacțiunea dintre factorii psihologici și afecțiunile medicale.",
+			"dis": "Depresie, Anxietate, Schizofrenie, Tulburări bipolare, PTSD (sindromul de stres post-traumatic), Tulburări alimentare, ADHD, Sindromul de burnout, Fobii, Insomnie"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 20,
+		"fields": {
+			"name": "Radiologie",
+			"description": "Radiologia se ocupă cu diagnosticul imagistic utilizând diferite tehnologii precum raze X, tomografie computerizată și imagistică prin rezonanță magnetică.",
+			"dis": "Radiografii, CT scan, RMN (rezonanță magnetică nucleară), Mamografie, Ecografie, Angiografie, Tomografie cu emisie de pozitroni (PET), Imagistică funcțională, Imagistică moleculară, Radioterapie"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 21,
+		"fields": {
+			"name": "Urologie si Nefrologie",
+			"description": "Urologia se concentrează pe diagnosticul și tratamentul afecțiunilor sistemului urinar, iar nefrologia se axează pe rinichi și afecțiunile acestora.",
+			"dis": "Infecții urinare, Calculi renali, Insuficiență renală, Cancer de rinichi, Hipertrofie de prostată, Cistită, Litiază urinară, Incontinență urinară, Hematurie, Glomerulonefrită, Boală renală polichistică"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 22,
+		"fields": {
+			"name": "Medicina muncii",
+			"description": "Medicina muncii se axează pe sănătatea și siguranța la locul de muncă, precum și pe evaluarea și gestionarea riscurilor profesionale.",
+			"dis": "Ergonomie, Boli profesionale, Evaluarea riscurilor, Examinări medicale la angajați, Recuperare post-accident, Sănătatea lucrătorilor, Managementul stresului în mediul de lucru"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 23,
+		"fields": {
+			"name": "Medicina legala",
+			"description": "Medicina legală se ocupă cu aplicarea cunoștințelor medicale în cadrul sistemului de justiție penală și civilă.",
+			"dis": "Autopsii, Expertize medicale, Investigarea deceselor suspecte, Abuzul asupra minorilor, Identificare prin ADN, Determinarea capacității de muncă, Evaluarea prejudiciului corporal, Malpraxis medical"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 24,
+		"fields": {
+			"name": "Medicina sportiva",
+			"description": "Medicina sportivă se concentrează pe sănătatea și performanța sportivilor, inclusiv prevenirea și tratarea leziunilor legate de activitatea fizică.",
+			"dis": "Entorse, Întinderi musculare, Fracturi de stres, Tendinită, Leziuni ale ligamentelor, Overtraining, Tratamentul accidentărilor sportive, Evaluarea precompetițională, Recuperarea după leziuni"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 25,
+		"fields": {
+			"name": "Nutritie",
+			"description": "Nutriția se axează pe studiul alimentelor și al nutrienților, precum și pe gestionarea dietei pentru a menține sănătatea și a trata diferite afecțiuni medicale.",
+			"dis": "Obezitate, Diabet zaharat, Malnutriție, Anorexie nervoasă, Bulimie, Intoleranțe alimentare, Boli ale tractului digestiv, Boli cardiovasculare, Alergii alimentare, Boli renale legate de dietă, Sindromul de colon iritabil"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 26,
+		"fields": {
+			"name": "Oncologie",
+			"description": "Oncologia se concentrează pe diagnosticul și tratamentul cancerului, inclusiv chimioterapia, radioterapia și terapiile țintite.",
+			"dis": "Cancer de sân, Cancer de plămâni, Cancer colorectal, Cancer de prostată, Cancer de col uterin, Leucemie, Limfom, Tumori cerebrale, Melanom, Sarcom"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 27,
+		"fields": {
+			"name": "Reumatologie",
+			"description": "Reumatologia se ocupă cu diagnosticul și tratarea afecțiunilor sistemului musculo-scheletic și a bolilor autoimune.",
+			"dis": "Artrită reumatoidă, Osteoartrită, Lupus eritematos sistemic, Guta, Spondilită anchilozantă, Poliartrită reumatoidă, Vasculită, Fibromialgie, Sclerodermie, Polimiozită"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 28,
+		"fields": {
+			"name": "Urgențe medicale",
+			"description": "Urgențele medicale se concentrează pe evaluarea și gestionarea rapidă a situațiilor critice de sănătate.",
+			"dis": "Accident vascular cerebral, Infarct miocardic, Hemoragie severă, Șoc anafilactic, Stop cardiac, Traumatisme severe, Insuficiență respiratorie acută, Otrăviri, Convulsii"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 29,
+		"fields": {
+			"name": "Nefrologie",
+			"description": "Nefrologia se axează pe diagnosticarea și tratamentul afecțiunilor sistemului renal (rinichi), inclusiv a bolilor renale și a afecțiunilor sistemului urinar.",
+			"dis": "Insuficiență renală, Glomerulonefrită, Nefrolitiază, Sindrom nefrotic, Boala polichistică a rinichilor, Pielonefrită, Rinichi în potcoavă, Nefropatie diabetică, Boala Alport, Sindromul nefritic"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 30,
+		"fields": {
+			"name": "Neonatologie",
+			"description": "Neonatologia este ramura medicinii care se ocupă cu îngrijirea medicală a nou-născuților, în special a celor născuți prematur sau cu probleme medicale.",
+			"dis": "Sindromul de detresă respiratorie a nou-născutului, Icter neonatal, Hipoglicemie, Enterocolită necrozantă, Anemie a prematurității, Malformații congenitale, Hemoragia intraventriculară, Hipotermie, Surditate congenitală, Tetanie"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 31,
+		"fields": {
+			"name": "Nutritie",
+			"description": "Nutriția se axează pe studiul alimentelor și al nutrienților, precum și pe gestionarea dietei pentru a menține sănătatea și a trata diferite afecțiuni medicale.",
+			"dis": "Obezitate, Diabet zaharat, Malnutriție, Anorexie nervoasă, Bulimie, Intoleranțe alimentare, Boli ale tractului digestiv, Boli cardiovasculare, Alergii alimentare, Boli renale legate de dietă"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 32,
+		"fields": {
+			"name": "Oncologie pediatrică",
+			"description": "Oncologia pediatrică se concentrează pe diagnosticul și tratamentul cancerului la copii, inclusiv terapii precum chimioterapia și radioterapia.",
+			"dis": "Leucemie pediatrică, Tumori cerebrale la copii, Neuroblastom, Retinoblastom, Osteosarcom, Limfom Hodgkin la copii, Leucemie mieloidă acută, Sarcom Ewing, Tumori renale la copii, Rabdomiosarcom"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 33,
+		"fields": {
+			"name": "Medicina de familie",
+			"description": "Medicina de familie se concentrează pe îngrijirea medicală cuprinzătoare a întregii familii, de la copii la adulți și vârstnici.",
+			"dis": "Managementul bolilor cronice, Vaccinări, Îngrijire prenatală, Screening medical, Consiliere în sănătate, Managementul durerii, Promovarea sănătății, Îngrijirea vârstnicilor, Sănătatea copilului"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 34,
+		"fields": {
+			"name": "Radioterapie",
+			"description": "Radioterapia folosește radiații pentru a trata și controla creșterea celulelor canceroase în anumite părți ale corpului.",
+			"dis": "Cancer de sân, Cancer de prostată, Cancer de plămâni, Cancer de col uterin, Cancer de creier, Limfom, Sarcom, Tumori de cap și gât, Melanom, Cancer rectal"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 35,
+		"fields": {
+			"name": "Reumatologie pediatrică",
+			"description": "Reumatologia pediatrică se ocupă cu diagnosticul și tratamentul afecțiunilor musculo-scheletice și a bolilor autoimune la copii.",
+			"dis": "Artrită idiopatică juvenilă, Lupus eritematos sistemic la copii, Dermatomiozită, Vasculită la copii, Spondilită anchilozantă la copii, Boli autoimune la copii, Sindromul lui Kawasaki, Sclerodermie la copii, Boli legate de hiperlaxitate la copii"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 36,
+		"fields": {
+			"name": "Sexologie",
+			"description": "Sexologia se axează pe studiul sexualității umane și a problemelor legate de sănătatea sexuală.",
+			"dis": "Disfuncție erectilă, Ejaculare precoce, Libido scăzut, Tulburări de orgasm, Dispareunie, Vaginism, Parafilii, Probleme de identitate de gen, Educație sexuală"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 37,
+		"fields": {
+			"name": "Transfuziologie",
+			"description": "Transfuziologia se ocupă cu gestionarea transfuziilor de sânge și a produselor sanguine pentru a trata afecțiuni medicale și traumatisme.",
+			"dis": "Anemie severă, Hemofilie, Leucemie, Cancer, Accident vascular cerebral, Operații chirurgicale, Traumatisme majore, Sângerări gastrointestinale, Arsurile severe, Transplant de organe"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 38,
+		"fields": {
+			"name": "Uroginecologie",
+			"description": "Uroginecologia se axează pe afecțiunile care afectează sistemul urinar și pelvin la femei, cum ar fi incontinența urinară și prolapul organelor pelvine.",
+			"dis": "Incontinență urinară, Prolapsul organelor pelvine, Infecții urinare recurente, Tulburări ale vezicii urinare, Fistule urogenitale, Sarcina și incontinența urinară, Tratamente nechirurgicale pentru incontinență, Chirurgie de reconstrucție pelvină"
+		}
+	},
+	{
+		"model": "medical.category",
+		"pk": 39,
+		"fields": {
+			"name": "Psihologie",
+			"description": "Psihologia se concentrează pe studiul comportamentului uman, proceselor mentale și interacțiunilor sociale.",
+			"dis": "Psihoterapie, Consiliere, Terapie cognitiv-comportamentală, Psihologie clinică, Psihologie școlară, Psihologie organizațională, Psihologie sportivă, Psihologie forensică, Psihologie de dezvoltare, Psihologie socială"
+		}
+	}
+]
