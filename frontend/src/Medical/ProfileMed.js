@@ -95,14 +95,16 @@ function ProfileMed () {
 
   return (
   <Container>
+    <Row>
+                <Col lg={8} className='first-row rounded-end-circle pt-5 pb-5 p-3'>
         <Tabs
       defaultActiveKey="questions"
       id="uncontrolled-tab-example"
-      className="mb-3 rounded-5"
+      className="mb-3 rounded-start-5"
     >
       <Tab eventKey="questions" title="Questions" className="custom-tab bg-light-subtle text-dark p-2 rounded-5">
         <Row>
-        <Col lg={6}>
+        <Col lg={10}>
     <p className="fw-semibold mt-5">Întrebări din categoriile în care activați:</p>
 
     {question?.map((que) => (
@@ -118,7 +120,7 @@ function ProfileMed () {
         ))}
 
         <br /><small>{que.added}</small><br /><br/>
-        <h6></h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong style={{'color': "indianred"}}> {que.name} | {que.text}</strong><br/><br/>
+        <h6></h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong style={{'color': "blueviolet"}}> <strong>{que.name}</strong> | {que.text}</strong><br/><br/>
 
     {que.answers?.map(ans => (
                 <>
@@ -234,7 +236,8 @@ function ProfileMed () {
         </Row>
       </Tab>
     </Tabs>
-
+                </Col>
+    </Row>
   </Container>
 );
 

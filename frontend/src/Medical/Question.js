@@ -116,7 +116,7 @@ function Question() {
     <Tabs
       defaultActiveKey="myQuestions"
       id="uncontrolled-tab-example"
-      className='pt-5 rounded-5 border-0'
+      className='pt-5 rounded-start-5 px-2'
     >
       <Tab eventKey="myQuestions" title="My Questions">
    <ListGroup as="ol" numbered className="mt-5 rounded-4">
