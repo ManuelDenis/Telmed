@@ -116,10 +116,10 @@ function Question() {
     <Tabs
       defaultActiveKey="myQuestions"
       id="uncontrolled-tab-example"
-      className='pt-5'
+      className='pt-5 rounded-5 border-0'
     >
       <Tab eventKey="myQuestions" title="My Questions">
-   <ListGroup as="ol" numbered>
+   <ListGroup as="ol" numbered className="mt-5 rounded-4">
       {userQuestion?.map(que =>(
                  <>
       <ListGroup.Item
@@ -191,7 +191,7 @@ function Question() {
 
       </Tab>
       <Tab eventKey="ask" title="Ask Me" onClick={handleShow}>
-        <Button className='m-3' variant="primary" onClick={handleShow}>Intreaba</Button>
+        <Button className='m-3 mt-5 rounded-5' variant="primary" onClick={handleShow}>Intreaba</Button>
       </Tab>
     </Tabs>
                     ) :

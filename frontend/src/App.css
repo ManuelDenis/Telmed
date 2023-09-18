@@ -91,3 +91,19 @@ p {
   align-items: center;
   justify-content: center;
 }
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(135, 206, 250, 0.19) !important; /* Elimină fundalul alb */
+  color: lightcyan !important; /* Schimbă culoarea textului la negru sau la culoarea dorită */
+}
+.nav-tabs .nav-link {
+  color: #cae0e5 !important; /* Schimbă culoarea textului la roșu sau la culoarea dorită */
+}
+/* Anulează stilurile implicite ale Bootstrap pentru efectul hover pe tab-uri */
+.nav-tabs .nav-item .nav-link:hover {
+  border: none;
+  background-color: transparent; /* Elimină fundalul la hover */
+  color: white !important; /* Menține culoarea textului la negru sau culoarea dorită */
+}

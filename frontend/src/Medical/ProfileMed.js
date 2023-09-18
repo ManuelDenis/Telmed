@@ -98,7 +98,7 @@ function ProfileMed () {
         <Tabs
       defaultActiveKey="questions"
       id="uncontrolled-tab-example"
-      className="mb-3 bg-primary-subtle rounded-3"
+      className="mb-3 rounded-5"
     >
       <Tab eventKey="questions" title="Questions" className="custom-tab bg-light-subtle text-dark p-2 rounded-5">
         <Row>
@@ -118,7 +118,7 @@ function ProfileMed () {
         ))}
 
         <br /><small>{que.added}</small><br /><br/>
-        <h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong style={{'color': "indigo"}}> {que.name} | {que.text}</strong></h6><br/><br/>
+        <h6></h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong style={{'color': "indianred"}}> {que.name} | {que.text}</strong><br/><br/>
 
     {que.answers?.map(ans => (
                 <>
@@ -137,7 +137,7 @@ function ProfileMed () {
 
                 </>
             ))}
-              <Button className="btn-sm shadow-lg rounded-5" variant="primary" onClick={() =>
+              <Button className="btn-sm shadow rounded-5" variant="primary" onClick={() =>
               { setSelectedQuestionId(que.id);
                 handleShow();
                 setSelectedQuestionText(que.text)}}>
