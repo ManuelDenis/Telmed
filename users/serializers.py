@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
-
 from questions.models import AnswerVote, Answer
 from questions.serializers import AnswerSerializer
 from users.models import CustomUser, ProfileMed, CommentProfileMed, DoctorVote

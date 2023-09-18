@@ -141,20 +141,6 @@ function Category() {
                              ))}
                      </Accordion>
                 </Col>
-                <Col>
-    <Card>
-      <Card.Header>Featured</Card.Header>
-      <Card.Body>
-          <Card.Title><h3>TelMed</h3></Card.Title>
-        <Card.Text>
-            Bun venit la <strong>TelMed.pro</strong>, aici puteti pune intrebari unei comunitati de profesionisti in domeniul medical.<br />
-            <Form.Control className="mt-3" size="lg" type="text" placeholder="Search" />
-
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                </Col>
             </Row>
         </Container>
     );

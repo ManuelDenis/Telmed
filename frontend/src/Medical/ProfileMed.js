@@ -98,12 +98,12 @@ function ProfileMed () {
         <Tabs
       defaultActiveKey="questions"
       id="uncontrolled-tab-example"
-      className="mb-3"
+      className="mb-3 bg-primary-subtle rounded-3"
     >
-      <Tab eventKey="questions" title="Questions" className="custom-tab">
+      <Tab eventKey="questions" title="Questions" className="custom-tab bg-light-subtle text-dark p-2 rounded-5">
         <Row>
         <Col lg={6}>
-    <p className="fw-semibold">Întrebări din categoriile în care activați:</p>
+    <p className="fw-semibold mt-5">Întrebări din categoriile în care activați:</p>
 
     {question?.map((que) => (
       <p key={que.id} className='p-2'>
@@ -118,29 +118,26 @@ function ProfileMed () {
         ))}
 
         <br /><small>{que.added}</small><br /><br/>
-        <i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong> {que.name}</strong> | {que.text}<br/><br/>
+        <h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong style={{'color': "indigo"}}> {que.name} | {que.text}</strong></h6><br/><br/>
 
     {que.answers?.map(ans => (
                 <>
   <p>{profiles.map((prof) => (
+
   <div key={prof.id} className="lead">
     {prof.id === ans.med && (
-      <small>
-        <small className="text-primary">
-            <i className='bi bi-chat-dots-fill text-info'></i> {prof.name}<br /><StarRating rating={prof.average_rating} />
+        <small>
+          <i className='bi bi-chat-dots-fill text-info'></i> <strong>{prof.name}</strong> | {ans.text}<br />
         </small>
-        {`${prof.average_rating} (${prof.total_votes} votes)`}
-      </small>
     )}
   </div>
-      ))}</p>
-                    <p className="p-2">
-                    {ans.text}
-                    </p>
+
+      ))}
+    </p>
 
                 </>
             ))}
-              <Button className="btn-sm" variant="outline-warning" onClick={() =>
+              <Button className="btn-sm shadow-lg rounded-5" variant="primary" onClick={() =>
               { setSelectedQuestionId(que.id);
                 handleShow();
                 setSelectedQuestionText(que.text)}}>
@@ -237,12 +234,6 @@ function ProfileMed () {
         </Row>
       </Tab>
     </Tabs>
-
-<Row>
-</Row>
-
-      <Row>
-      </Row>
 
   </Container>
 );

@@ -76,7 +76,7 @@ function Navbars() {
 
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto my-lg-0">
-            <Nav.Link href="/Question">Q&Ans</Nav.Link>
+            {profile.name ? null : <Nav.Link href="/Question">Q&Ans</Nav.Link>}
             <Nav.Link href="/Category">Categories</Nav.Link>
             <Nav.Link href="/ProfileMedList">Medici</Nav.Link>
 
@@ -104,6 +104,7 @@ function Navbars() {
               </NavDropdown.Item>
             </NavDropdown>
 
+                <Nav.Link href="" className='bi-person-circle text-info'> | {userInfo.email.split('@')[0]}</Nav.Link>
                 <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
                 </>
             ) : (

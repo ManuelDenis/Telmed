@@ -1,13 +1,10 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
-from django.http import HttpResponse
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.response import Response
-
 from djknox import settings
-from questions.models import Question, Answer, AnswerVote
-from questions.serializers import QuestionSerializer, AnswerSerializer, AnswerVoteSerializer
+from questions.models import Question, Answer, AnswerVote, Comment
+from questions.serializers import QuestionSerializer, AnswerSerializer, AnswerVoteSerializer, CommentSerializer
 from users.models import CustomUser, ProfileMed
 
 
@@ -86,6 +83,20 @@ class CreateAnswerViewSet(viewsets.ModelViewSet):
             recipient_list = [question_user.email]
 
             send_mail(subject, message, from_email, recipient_list)
+
+
+class CreateCommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    permission_classes = [IsAuthenticated]
+    http_method_names = ['post', ]
+
+    def perform_create(self, serializer):
+        user_info = CustomUser.objects.get(email=self.request.user.email)
+        answer_id = self.request.data.get('answer')
+        serializer.validated_data['user'] = user_info
+        serializer.validated_data['answer'] = Answer.objects.get(id=answer_id)
+        serializer.save()
 
 
 class AnswerVoteCreateView(viewsets.ModelViewSet):

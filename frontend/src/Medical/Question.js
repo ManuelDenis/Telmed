@@ -24,6 +24,7 @@ function Question() {
     const [question, setQuestion] = useState([]);
     const [userQuestion, setUserQuestion] = useState([]);
     const token = localStorage.getItem('token');
+    const [login, setLogin] = useState('False');
     const [category, setCategory] = useState([]);
     const [formData, setFormData] = useState({
           name: '',
@@ -38,7 +39,15 @@ function Question() {
         getQuestions();
         getUserQuestions();
         getProfiles();
+        isLogin();
     }, []);
+    const isLogin = () => {
+          if (token) {
+    setLogin(true);
+          } else {
+    setLogin(false);
+  }
+    };
     const getProfiles = async () => {
     try {
       const response = await axios.get('/medical/profiles/');
@@ -102,6 +111,8 @@ function Question() {
         <Container>
             <Row>
                 <Col lg={7} className='first-row rounded-end-circle pt-5 pb-5 p-3'>
+                    {login ? (
+
     <Tabs
       defaultActiveKey="myQuestions"
       id="uncontrolled-tab-example"
@@ -130,12 +141,16 @@ function Question() {
             <p className="text-secondary mt-2"><i className='bi bi-patch-question-fill text-danger' style={{'font-size': 18}}></i> <strong>{que.text}</strong></p><br />
             <Row>
 
+
+
       {que.answers?.map(ans => (
                 <Col className="mb-4 pb-2" lg={12} style={{ borderLeft: '3px solid lightblue', borderRadius: '15px' }}>
-   <i className='bi bi-chat-dots-fill text-info' style={{'font-size': 20}}></i> {ans.text}
+   <i className='bi bi-chat-dots-fill text-info' style={{'font-size': 20}}></i> {ans.text}<br />
+
 
   <p>{profile.map((prof) => (
   <div key={prof.id} className="lead">
+
     {prof.id === ans.med && (
         <small className="text-primary blockquote-footer">
             {prof.name}
@@ -147,14 +162,20 @@ function Question() {
 
 {/* Verificăm dacă există voturi asociate acestui răspuns */}
 {ans.answer_vote.length > 0 ? (
-  <h6>Review acordat!</h6>
+  <p className='bi-check-circle small text-dark rounded-5'> Review acordat!
+      <> </>| <Button variant="outline-danger" className="btn-sm bg-light rounded-5">
+        Comenteaza!
+      </Button>
+  </p>
 ) : (
           <div key={ans.id}>
           <StarRatingCreate answerId={ans.id} />
+      <> </>| <Button variant="outline-danger" className="btn-sm rounded-5 bg-light">
+        Comenteaza!
+      </Button>
           </div>
+
 )}
-
-
 
                 </Col>
             ))}
@@ -173,6 +194,13 @@ function Question() {
         <Button className='m-3' variant="primary" onClick={handleShow}>Intreaba</Button>
       </Tab>
     </Tabs>
+                    ) :
+                        (
+                            <h5 className="mt-5 pt-5">Pentru a putea adresa intrebari<br /> este necesar sa te autentifici.<br />
+                                <Button href="/Login" className="btn-sm mt-5">Login</Button>
+                            </h5>
+                        )}
+
                 </Col>
                 <Col lg={5}>
         <p className='mt-5 mb-5 text-center display-6'>Categorii<br /> medicale<br /> si intrebari<br /> recente</p>

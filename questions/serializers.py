@@ -16,10 +16,11 @@ class AnswerVoteSerializer(serializers.ModelSerializer):
 
 class AnswerSerializer(serializers.ModelSerializer):
     answer_vote = AnswerVoteSerializer(many=True, read_only=True)
+    comments = CommentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Answer
-        fields = ('id', 'text', 'question', 'added', 'med', 'answer_vote')
+        fields = ('id', 'text', 'question', 'added', 'med', 'answer_vote', 'comments')
 
 
 class QuestionSerializer(serializers.ModelSerializer):

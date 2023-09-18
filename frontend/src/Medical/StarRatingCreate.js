@@ -25,8 +25,8 @@ const StarRatingCreate = ({ answerId }) => {
   };
 
   return (
-    <div>
-      <Button variant="outline-info" onClick={handleShow} className="btn-sm rounded-3 bg-light">
+    <>
+      <Button variant="outline-info" onClick={handleShow} className="btn-sm rounded-5 bg-light">
         Acorda review!
       </Button>
 
@@ -44,6 +44,7 @@ const StarRatingCreate = ({ answerId }) => {
               value={reviewText}
               onChange={(e) => setReviewText(e.target.value)}
               placeholder="Introduceți review-ul dvs. aici"
+              className="bg-warning-subtle"
             />
       </Form.Group>
 
@@ -66,7 +67,7 @@ const StarRatingCreate = ({ answerId }) => {
         </Modal.Footer>
       </Modal>
 
-    </div>
+    </>
   );
 };
 
