@@ -82,26 +82,25 @@ const QuestionCreate = () => {
         </Form.Group>
               </Col>
               <Col lg={5} className="mt-5">
-          <Form.Group className="mb-3" controlId="category">
-          <Form.Label>*Categorie<br />
-              <small className="text-warning">* Poti selecta categorii multiple</small></Form.Label>
-          <Form.Control
-            as="select"
-            name="category"
-            value={formData.category}
-            onChange={handleCategoryChange}
-            multiple
-            required
-            style={{ height: '200px' }}
-          >
-            <option value="">Select a category</option>
-            {category.map((cat) => (
-              <option key={cat.id} value={cat.id}>
-                {cat.name}
-              </option>
-            ))}
-          </Form.Control>
-        </Form.Group>
+<Form.Group className="mb-3" controlId="category">
+  <Form.Label>*Categorie</Form.Label>
+  <Form.Control
+    as="select"
+    name="category"
+    value={formData.category}
+    onChange={handleCategoryChange}
+    multiple
+    required
+    className="category-select"
+  >
+    <option value="">Select a category</option>
+    {category.map((cat) => (
+      <option key={cat.id} value={cat.id}>
+        {cat.name}
+      </option>
+    ))}
+  </Form.Control>
+</Form.Group>
               </Col>
               <Col lg={3}>
           <Button variant="primary" type="submit" className="mt-3 mb-5">

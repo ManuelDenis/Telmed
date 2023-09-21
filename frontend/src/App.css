@@ -107,3 +107,10 @@ p {
   background-color: transparent; /* Elimină fundalul la hover */
   color: white !important; /* Menține culoarea textului la negru sau culoarea dorită */
 }
+/* Mobile-specific styles for category select */
+@media (max-width: 768px) {
+  .category-select {
+    /* Add your mobile-specific styling here, e.g., reducing the height */
+    height: auto; /* Let the browser handle the height */
+  }
+}
