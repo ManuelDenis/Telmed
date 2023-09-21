@@ -204,54 +204,53 @@ function Question() {
 
         <Row className=' mb-1'>
 
-        <Accordion defaultActiveKey="0" className='mt-5'>
-        {category?.map(cat => (
-                                <Row>
-                                    <Col>
+<Accordion defaultActiveKey="0" className='mt-5'>
+  {category?.map(cat => (
+    <Row key={cat.id}>
+      <Col>
         <Accordion.Item eventKey={cat.id} className="m-1">
-        <Accordion.Header><h6>{cat.name}</h6></Accordion.Header>
-        <Accordion.Body>
-
-
-      <ListGroup as="ol">
-      <ListGroup.Item
-        as="li"
-        className="d-flex justify-content-between align-items-start"
-      >
-        <div className="ms-3 me-auto">
-            <div className="fw-bold">Intrebari recente:</div>
-
-                {cat.questions?.map(que => (
-                    <li className="m-0">{que.text}</li>
-                ))}
-
-
-
-        </div>
-
-      </ListGroup.Item>
-      <ListGroup.Item
-        as="li"
-        className="d-flex justify-content-between align-items-start"
-      >
-        <div className="ms-2 me-auto">
-          <div className="fw-bold"></div>
-        </div>
-        <Badge bg="primary" pill>
-          <Button variant="primary">Intreaba</Button>
-        </Badge>
-      </ListGroup.Item>
-
-    </ListGroup>
-
-
-
-        </Accordion.Body>
-      </Accordion.Item>
-                                    </Col>
-                                </Row>
-                             ))}
-                     </Accordion>
+          <Accordion.Header>
+            <h6 style={{ display: 'flex', alignItems: 'center' }}>
+              {cat.name}
+              <Badge
+                className={`m-1 ${cat.questions.length > 0 ? 'bg-danger' : 'bg-secondary'}`}
+                style={{ marginLeft: 'auto' }}
+              >
+                {cat.questions.length}
+              </Badge>
+            </h6>
+          </Accordion.Header>
+          <Accordion.Body>
+            <ListGroup as="ol">
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-3 me-auto">
+                  <div className="fw-bold">Intrebari recente:</div>
+                  {cat.questions?.map(que => (
+                    <li className="m-0" key={que.id}>{que.text}</li>
+                  ))}
+                </div>
+              </ListGroup.Item>
+              <ListGroup.Item
+                as="li"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold"></div>
+                </div>
+                <Badge bg="primary" pill>
+                  <Button variant="primary">Intreaba</Button>
+                </Badge>
+              </ListGroup.Item>
+            </ListGroup>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Col>
+    </Row>
+  ))}
+</Accordion>
 
             </Row>
 
