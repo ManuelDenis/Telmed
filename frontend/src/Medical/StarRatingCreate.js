@@ -26,7 +26,7 @@ const StarRatingCreate = ({ answerId }) => {
 
   return (
     <>
-      <Button variant="outline-info" onClick={handleShow} className="btn-sm rounded-5 bg-light">
+      <Button variant="outline-dark" onClick={handleShow} className="btn-sm rounded-2 bg-danger-subtle shadow">
         Acorda review!
       </Button>
 

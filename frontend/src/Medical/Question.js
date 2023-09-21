@@ -16,6 +16,7 @@ import {
 } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import StarRatingCreate from './StarRatingCreate';
+import CommentCreateModal from "./CommentCreate";
 
 function Question() {
     const [show, setShow] = useState(false);
@@ -31,7 +32,6 @@ function Question() {
           category: [],
           text: '',
         });
-    const [answerId, setAnswerId] = useState('');
     const [profile, setProfile] = useState([]);
 
 
@@ -128,7 +128,7 @@ function Question() {
         className="d-flex justify-content-between align-items-start mb-1"
       >
         <div className="ms-2 me-auto">
-          <div className="fw-bold">
+        <div className="fw-bold">
       {que.category.map(catId => (
             <>
               {category.map(cat => (
@@ -142,10 +142,8 @@ function Question() {
             <p className="text-secondary mt-2"><i className='bi bi-patch-question-fill text-danger' style={{'font-size': 18}}></i> <strong>{que.text}</strong></p><br />
             <Row>
 
-
-
       {que.answers?.map(ans => (
-                <Col className="mb-4 pb-2" lg={12} style={{ borderLeft: '3px solid lightblue', borderRadius: '15px' }}>
+   <Col className="mb-4 pb-2" lg={12} style={{ borderLeft: '3px solid lightblue', borderRadius: '15px' }}>
    <i className='bi bi-chat-dots-fill text-info' style={{'font-size': 20}}></i> {ans.text}<br />
 
 
@@ -163,21 +161,13 @@ function Question() {
 
 {/* Verificăm dacă există voturi asociate acestui răspuns */}
 {ans.answer_vote.length > 0 ? (
-  <p className='bi-check-circle small text-dark rounded-5'> Review acordat!
-      <> </>|
-  </p>
-
-
-
+  <Button variant='light' className='btn-sm rounded-2 p-1' disabled>Review acordat!</Button>
 ) : (
-          <div key={ans.id}>
-          <StarRatingCreate answerId={ans.id} /> | <Button variant="outline-danger" className="btn-sm bg-light rounded-5">
-        Comenteaza!
-      </Button>
-          </div>
-
+          <>
+          <StarRatingCreate answerId={ans.id} />
+          </>
 )}
-
+          <CommentCreateModal answerId={ans.id} />
                 </Col>
             ))}
 
