@@ -5,7 +5,7 @@ import axios from "axios";
 const CommentCreateModal = ({ answerId }) => {
   const token = localStorage.getItem("token");
   const [formData, setFormData] = useState({
-    answer: 0,
+    answer: answerId,
     text: "",
   });
   const [showModal, setShowModal] = useState(false);

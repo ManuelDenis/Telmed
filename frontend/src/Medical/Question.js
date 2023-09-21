@@ -15,6 +15,7 @@ import {
     Tabs
 } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaHandHoldingMedical } from 'react-icons/fa';
 import StarRatingCreate from './StarRatingCreate';
 import CommentCreateModal from "./CommentCreate";
 
@@ -128,7 +129,7 @@ function Question() {
         className="d-flex justify-content-between align-items-start mb-1"
       >
         <div className="ms-2 me-auto">
-        <div className="fw-bold">
+        <div className="fw-bold text-secondary">
       {que.category.map(catId => (
             <>
               {category.map(cat => (
@@ -139,25 +140,30 @@ function Question() {
             </>
         ))}
           </div>
-            <p className="text-secondary mt-2"><i className='bi bi-patch-question-fill text-danger' style={{'font-size': 18}}></i> <strong>{que.text}</strong></p><br />
+            <p className="mt-4"><i className='bi bi-patch-question-fill text-danger' style={{'font-size': 18}}></i> <strong>{que.text}</strong></p><br />
             <Row>
 
       {que.answers?.map(ans => (
    <Col className="mb-4 pb-2" lg={12} style={{ borderLeft: '3px solid lightblue', borderRadius: '15px' }}>
-   <i className='bi bi-chat-dots-fill text-info' style={{'font-size': 20}}></i> {ans.text}<br />
-
-
-  <p>{profile.map((prof) => (
-  <div key={prof.id} className="lead">
-
+    {profile.map((prof) => (
+  <>
     {prof.id === ans.med && (
-        <small className="text-primary blockquote-footer">
-            {prof.name}
-        </small>
+        <>
+            <FaHandHoldingMedical fontSize={35} color='indigo'/><br />
+            <strong>{prof.name}</strong><br />
+        </>
     )}
+  </>
+      ))}
+       <div className='mb-2'> {ans.text}</div>
 
-  </div>
-      ))}</p>
+       {ans.comments.map(com => (
+           <div className='p-2'>
+               <div><i className='bi bi-chat-text text-secondary' style={{'font-size': 20}}> </i>{com.text}</div>
+           </div>
+       ))}
+<br /><br /><br />
+
 
 {/* Verificăm dacă există voturi asociate acestui răspuns */}
 {ans.answer_vote.length > 0 ? (
