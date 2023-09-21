@@ -93,9 +93,7 @@ class CreateCommentViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         user_info = CustomUser.objects.get(email=self.request.user.email)
-        answer_id = self.request.data.get('answer')
         serializer.validated_data['user'] = user_info
-        serializer.validated_data['answer'] = Answer.objects.get(id=answer_id)
         serializer.save()
 
 

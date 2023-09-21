@@ -5,7 +5,7 @@ from questions.models import Question, Answer, Comment, AnswerVote
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ('answer', 'text')
 
 
 class AnswerVoteSerializer(serializers.ModelSerializer):

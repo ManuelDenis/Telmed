@@ -187,7 +187,7 @@ function ProfileMed () {
       </Tab>
       <Tab eventKey="profile" title="Profile" className="custom-tab">
         <Row>
-        <Col lg={6} className='p-2 pb-3'>
+        <Col className='p-2 pb-3'>
 
 
           <div className="mt-5">

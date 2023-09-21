@@ -31,6 +31,7 @@ function Question() {
           category: [],
           text: '',
         });
+    const [answerId, setAnswerId] = useState('');
     const [profile, setProfile] = useState([]);
 
 
@@ -163,14 +164,14 @@ function Question() {
 {/* Verificăm dacă există voturi asociate acestui răspuns */}
 {ans.answer_vote.length > 0 ? (
   <p className='bi-check-circle small text-dark rounded-5'> Review acordat!
-      <> </>| <Button variant="outline-danger" className="btn-sm bg-light rounded-5">
-        Comenteaza!
-      </Button>
+      <> </>|
   </p>
+
+
+
 ) : (
           <div key={ans.id}>
-          <StarRatingCreate answerId={ans.id} />
-      <> </>| <Button variant="outline-danger" className="btn-sm rounded-5 bg-light">
+          <StarRatingCreate answerId={ans.id} /> | <Button variant="outline-danger" className="btn-sm bg-light rounded-5">
         Comenteaza!
       </Button>
           </div>
