@@ -108,7 +108,6 @@ function Profile() {
             onChange={handleCategoryChange}
             multiple
             required
-            style={{ height: '200px' }}
           >
             <option value="">Select a category</option>
             {category.map((cat) => (

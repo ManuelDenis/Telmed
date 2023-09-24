@@ -5,9 +5,7 @@ import {
     Accordion,
     Badge,
     Button,
-    Card,
     Col,
-    FloatingLabel,
     Form,
     ListGroup,
     Offcanvas,
@@ -20,6 +18,7 @@ import StarRatingCreate from './StarRatingCreate';
 import CommentCreateModal from "./CommentCreate";
 
 function Question() {
+    const [commentsUpdated, setCommentsUpdated] = useState(false);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -42,7 +41,10 @@ function Question() {
         getUserQuestions();
         getProfiles();
         isLogin();
-    }, []);
+    }, [commentsUpdated]);
+    const updateComments = () => {
+        setCommentsUpdated(!commentsUpdated);
+    };
     const isLogin = () => {
           if (token) {
     setLogin(true);
@@ -158,8 +160,8 @@ function Question() {
        <div className='mb-2'> {ans.text}</div>
 
        {ans.comments.map(com => (
-           <div className='p-2'>
-               <div><i className='bi bi-chat-text text-secondary' style={{'font-size': 20}}> </i>{com.text}</div>
+           <div className='p-2' id='comments'>
+               <i className='bi bi-chat-text text-secondary' style={{'font-size': 20}}> </i>{com.text}
            </div>
        ))}
 <br /><br /><br />
@@ -173,7 +175,7 @@ function Question() {
           <StarRatingCreate answerId={ans.id} />
           </>
 )}
-          <CommentCreateModal answerId={ans.id} />
+          <CommentCreateModal answerId={ans.id} updateComments={updateComments}/>
                 </Col>
             ))}
 
@@ -199,6 +201,10 @@ function Question() {
                         )}
 
                 </Col>
+
+
+
+
                 <Col lg={5}>
         <p className='mt-5 mb-5 text-center display-6'>Categorii<br /> medicale<br /> si intrebari<br /> recente</p>
 

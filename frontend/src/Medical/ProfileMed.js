@@ -78,12 +78,13 @@ function ProfileMed () {
     event.preventDefault();
     formData.question = selectedQuestionId;
     try {
-      await axios.post(`/medical/answers-create/`, formData, {headers: {Authorization: `Token ${token}`}});
+      const response = await axios.post(`/medical/answers-create/`, formData, {headers: {Authorization: `Token ${token}`}});
+      setShow(false);
       setFormData({
         text: '',
         question: null,
         });
-      window.location.href = '/ProfileMed';
+      await getQuestion();
     } catch (error) {
         alert(error);
         console.error('Error:', error.response.data);
@@ -101,17 +102,17 @@ function ProfileMed () {
       defaultActiveKey="questions"
       id="uncontrolled-tab-example"
       className="mb-3 rounded-start-5"
-    >
-      <Tab eventKey="questions" title="Questions" className="custom-tab bg-light-subtle text-dark p-2 rounded-5">
+        >
+
+      <Tab eventKey="questions" title="Questions" className="custom-tab bg-light-subtle text-dark p-2 rounded-4">
         <Row>
         <Col lg={10}>
-    <p className="fw-semibold mt-5">Întrebări din categoriile în care activați:</p>
 
     {question?.map((que) => (
-      <p key={que.id} className='p-2'>
+      <p key={que.id} className='p-2 mb-5'>
         {que.category.map(catId => (
             <>
-              {categories.map(cat => (
+              {categories && categories.map(cat => (
                   <>
                     {catId === cat.id && <> <small>{cat.name}</small></>}
                   </>
@@ -124,7 +125,7 @@ function ProfileMed () {
 
     {que.answers?.map(ans => (
                 <>
-  <p>{profiles.map((prof) => (
+    <p>{profiles.map((prof) => (
 
   <div key={prof.id} className="lead">
     {prof.id === ans.med && (
@@ -137,6 +138,12 @@ function ProfileMed () {
       ))}
     </p>
 
+      {ans.comments.map(com => (
+           <div className='p-2' id='comments'>
+               <i className='bi bi-chat-text text-secondary' style={{'font-size': 20}}> </i>{com.text}
+           </div>
+       ))}
+
                 </>
             ))}
               <Button className="btn-sm shadow rounded-5" variant="primary" onClick={() =>
@@ -145,6 +152,7 @@ function ProfileMed () {
                 setSelectedQuestionText(que.text)}}>
                 Răspunde
               </Button>
+
 
         <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
@@ -182,7 +190,9 @@ function ProfileMed () {
         <hr />
       </p>
     ))}
-  </Col>
+        </Col>
+
+
         </Row>
       </Tab>
       <Tab eventKey="profile" title="Profile" className="custom-tab">

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Modal, Container, Button, Form } from "react-bootstrap";
 import axios from "axios";
 
-const CommentCreateModal = ({ answerId }) => {
+const CommentCreateModal = ({ answerId, updateComments }) => {
   const token = localStorage.getItem("token");
   const [formData, setFormData] = useState({
     answer: answerId,
@@ -22,10 +22,11 @@ const CommentCreateModal = ({ answerId }) => {
         headers: { Authorization: `Token ${token}` },
       });
       setFormData({
-        answer: 0,
+        answer: answerId,
         text: "",
       });
       setShowModal(false);
+      updateComments();
     } catch (error) {
       alert(error);
       console.error("Error:", error.response.data);
