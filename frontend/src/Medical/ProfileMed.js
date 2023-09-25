@@ -109,7 +109,7 @@ function ProfileMed () {
         <Col lg={10}>
 
     {question?.map((que) => (
-      <p key={que.id} className='p-2 mb-5'>
+      <p key={que.id} className='p-2 mb-5  '>
         {que.category.map(catId => (
             <>
               {categories && categories.map(cat => (
