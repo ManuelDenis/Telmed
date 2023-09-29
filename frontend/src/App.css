@@ -114,3 +114,9 @@ p {
     height: auto; /* Let the browser handle the height */
   }
 }
+.medic-reg {
+  color: #000505;
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+  line-height: 0;
+}

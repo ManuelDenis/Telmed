@@ -121,7 +121,7 @@ function ProfileMed () {
         ))}
 
         <br /><small>{que.added}</small><br /><br/>
-        <h6></h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong style={{'color': "blueviolet"}}> <strong>{que.name}</strong> | {que.text}</strong><br/><br/>
+        <h6></h6><i className='bi bi-patch-question-fill text-danger rounded-5'></i><strong> <strong>{que.name}</strong> | {que.text}</strong><br/><br/>
 
     {que.answers?.map(ans => (
                 <>
@@ -139,8 +139,8 @@ function ProfileMed () {
     </p>
 
       {ans.comments.map(com => (
-           <div className='p-2' id='comments'>
-               <i className='bi bi-chat-text text-secondary' style={{'font-size': 20}}> </i>{com.text}
+           <div className='p-2 mb-3' id='comments'>
+             <i className='bi bi-chat-text-fill text-warning' style={{'font-size': 20}}> </i><strong>{que.name}</strong> {com.text}
            </div>
        ))}
 

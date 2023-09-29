@@ -1,5 +1,5 @@
 import './App.css';
-import {Row} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Homepage from "./Components/Homepage";
@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Register from "./Register/Register";
 import ConfirmationSent from "./Register/ConfirmationSent";
 import Navbars from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import Login from "./Login/Login";
 import PasswordReset from "./Register/PasswordReset";
 import ResetPasswordPage from "./Register/ResetPasswordPage";
@@ -46,6 +47,7 @@ function App() {
       </Routes>
       </BrowserRouter>
         </Row>
+            <Footer />
     </Container>
   );
 }

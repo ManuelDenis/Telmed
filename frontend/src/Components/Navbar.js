@@ -79,17 +79,16 @@ function Navbars() {
             {profile.name ? null : <Nav.Link href="/Question">Q&Ans</Nav.Link>}
             <Nav.Link href="/Category">Categories</Nav.Link>
             <Nav.Link href="/ProfileMedList">Medici</Nav.Link>
+            {profile.name ? <Nav.Link href="/ProfileMed"><strong>Q&Ans</strong></Nav.Link> : null}
+
 
             {userInfo.email ? (
                 <>
-            <NavDropdown title="Account" id="basic-nav-dropdown">
+            <NavDropdown title={userInfo.email.split('@')[0]} id="basic-nav-dropdown">
                 {profile.user ? (
                     <>
               <NavDropdown.Item href="/ProfileMedUpdate">
                   Update profil
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/ProfileMed">
-                  Profilul tau
               </NavDropdown.Item>
                     </>
                 ) : (
@@ -97,14 +96,8 @@ function Navbars() {
                   Creeaza profil medic
               </NavDropdown.Item>
                 )}
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#">
-                {userInfo.email}
-              </NavDropdown.Item>
             </NavDropdown>
 
-                <Nav.Link href="" className='bi-person-circle text-info'> | {userInfo.email.split('@')[0]}</Nav.Link>
                 <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
                 </>
             ) : (
