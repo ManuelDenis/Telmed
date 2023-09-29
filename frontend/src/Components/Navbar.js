@@ -84,19 +84,15 @@ function Navbars() {
 
             {userInfo.email ? (
                 <>
-            <NavDropdown title={userInfo.email.split('@')[0]} id="basic-nav-dropdown">
                 {profile.user ? (
                     <>
-              <NavDropdown.Item href="/ProfileMedUpdate">
-                  Update profil
-              </NavDropdown.Item>
+              <Nav.Link href="/ProfileMedUpdate">
+                  {userInfo.email.split('@')[0]}
+              </Nav.Link>
                     </>
-                ) : (
-              <NavDropdown.Item href="/ProfileMedRegister">
-                  Creeaza profil medic
-              </NavDropdown.Item>
+                ):(
+            <Nav.Link href="#">{userInfo.email.split('@')[0]}</Nav.Link>
                 )}
-            </NavDropdown>
 
                 <Nav.Link href="#" onClick={logout}>Logout</Nav.Link>
                 </>
