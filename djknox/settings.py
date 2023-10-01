@@ -58,9 +58,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'https://telmedicine-9365d4641cb0.herokuapp.com'
+    'https://codeverse.ro'
 ]
-CSRF_TRUSTED_ORIGINS = ['https://telmedicine-9365d4641cb0.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://codeverse.ro']
 
 ROOT_URLCONF = 'djknox.urls'
 
