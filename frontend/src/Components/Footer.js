@@ -50,11 +50,12 @@ function Footer() {
   return (
       <Container className="mt-5">
           <Row className='justify-content-md-center text-center p-2 pt-5 pb-5'>
-              <Col lg={3}>
-                  <h5>Telmed</h5>
+              <Col lg={3} className='bg-info-subtle rounded-4 p-3 m-2'>
+                  <h5 className='text-dark'>Telmed</h5>
               </Col>
-              <Col lg={3}>
-                  <h5>Contact</h5>
+              <Col lg={3} className='bg-info-subtle rounded-4 p-3 m-2'>
+                  <h5 className='text-dark'>Contact</h5>
+                  <a href="mailto:contact@telmed.pro" className='medic-reg'>contact@telmed.pro</a>
               </Col>
                 {userInfo.email ? (
                 <>
@@ -63,7 +64,7 @@ function Footer() {
                     </>
                 ) : (
                     <>
-                        <Col lg={3} className='bg-info-subtle rounded-4 p-3'>
+                        <Col lg={3} className='bg-info-subtle rounded-4 p-3 m-2'>
                         <h4 className='text-dark'>Parteneri</h4>
                         <a href="/ProfileMedRegister" className='medic-reg'>Coleg medic,<br /> te invităm să-ți construiești<br /> profilul medical<br /> în comunitatea noastră.<br />Alătură-te astăzi echipei<br /> noastre de specialiști<br /> în sănătate!</a>
                         </Col>
