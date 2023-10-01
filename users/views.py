@@ -38,11 +38,20 @@ class CreateUserView(generics.CreateAPIView):
         from_email = settings.EMAIL_HOST_USER
         user = CustomUser.objects.get(email=email)
         to_email = email
-        subject = "Welcome to our platform"
+        subject = "Telemd - Welcome to our platform"
         message = "Thank you for registering on our platform!"
-        message += f"\n\nTo activate your account, click the following link:\n"
+
+        # Create the HTML content of the email with a clickable link
         activation_link = f"https://telmedicine-9365d4641cb0.herokuapp.com/activate/{user.id}/{token}"
-        message += activation_link
+        html_message = f"""
+        <html>
+        <body>
+            <p>{message}</p>
+            <p>To activate your account, click the following link:</p>
+            <a href="{activation_link}">{activation_link}</a>
+        </body>
+        </html>
+        """
 
         smtp_server = settings.EMAIL_HOST
         smtp_port = settings.EMAIL_PORT
@@ -53,7 +62,9 @@ class CreateUserView(generics.CreateAPIView):
         msg["From"] = from_email
         msg["To"] = to_email
         msg["Subject"] = subject
-        msg.attach(MIMEText(message, "plain"))
+
+        # Attach the HTML message
+        msg.attach(MIMEText(html_message, "html"))
 
         with smtplib.SMTP(smtp_server, smtp_port) as server:
             server.starttls()
