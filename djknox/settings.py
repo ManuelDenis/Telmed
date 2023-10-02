@@ -58,9 +58,9 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'https://codeverse.ro'
+    'https://telmed.pro'
 ]
-CSRF_TRUSTED_ORIGINS = ['https://codeverse.ro']
+CSRF_TRUSTED_ORIGINS = ['https://telmed.pro']
 
 ROOT_URLCONF = 'djknox.urls'
 
