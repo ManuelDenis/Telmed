@@ -42,7 +42,7 @@ class CreateUserView(generics.CreateAPIView):
         message = "Thank you for registering on our platform!"
 
         # Create the HTML content of the email with a clickable link
-        activation_link = f"https://telmedicine-9365d4641cb0.herokuapp.com/activate/{user.id}/{token}"
+        activation_link = f"https://www.telmed.pro/activate/{user.id}/{token}"
         html_message = f"""
         <html>
         <body>
@@ -131,7 +131,7 @@ class CheckEmailExistsView(APIView):
         subject = "Password reset"
         message = "Hello, you request a password reset link"
         message += f"\n\nTo reset password, click the following link:\n"
-        activation_link = f"https://telmedicine-9365d4641cb0.herokuapp.com/Reset-password/{user.id}/{token}"
+        activation_link = f"https://www.telmed.pro/Reset-password/{user.id}/{token}"
         message += activation_link
 
         smtp_server = settings.EMAIL_HOST
