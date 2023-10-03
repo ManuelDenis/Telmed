@@ -25,7 +25,6 @@ const ProfileMedRegister = () => {
             console.error('Eroare:', error)
         }
     };
-
     const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -42,11 +41,9 @@ const ProfileMedRegister = () => {
         console.error('Error:', error.response.data);
     }
     };
-
     const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
     };
-
     const handleCategoryChange = (e) => {
     const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
     setFormData((prevData) => ({

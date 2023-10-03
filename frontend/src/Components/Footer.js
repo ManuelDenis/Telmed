@@ -74,10 +74,6 @@ function Footer() {
                 </>
                  ) : (
                 <>
-              <Col lg={3} className='bg-info-subtle rounded-4 p-3 m-2'>
-                        <h4 className='text-dark'>Parteneri</h4>
-                        <a href="/ProfileMedRegister" className='medic-reg'>Coleg medic,<br /> te invităm să-ți construiești<br /> profilul medical<br /> în comunitatea noastră.<br />Alătură-te astăzi echipei<br /> noastre de specialiști<br /> în sănătate!</a>
-              </Col>
                 </>
                  )}
 
