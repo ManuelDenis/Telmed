@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Container from "react-bootstrap/Container";
 import {Accordion, Badge, Button, Card, Col, FloatingLabel, ListGroup, Row} from "react-bootstrap";
-import Form from 'react-bootstrap/Form';
 import {FaStar} from "react-icons/fa";
 
 function Category() {
@@ -46,7 +45,7 @@ function Category() {
 
                     <Accordion defaultActiveKey="0">
                             {categories?.map(category => (
-                                <Row>
+                                <Row key={category.id}>
                                     <Col>
         <Accordion.Item eventKey={category.id} className="m-2">
         <Accordion.Header><h6>{category.name}</h6></Accordion.Header>

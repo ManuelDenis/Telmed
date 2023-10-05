@@ -23,7 +23,7 @@ from questions.views import QuestionViewSet, CreateQuestionViewSet, CreateAnswer
 from users.views import ProfileMedViewSet, CreateProfileMedViewSet, Profile, ProfileUpdate
 
 router = DefaultRouter()
-router.register(r'category', CategoryViewSet)
+router.register(r'category', CategoryViewSet, basename='category')
 router.register(r'question', QuestionViewSet)
 router.register(r'profiles', ProfileMedViewSet, 'profile')
 router.register(r'profile-med-create', CreateProfileMedViewSet)
