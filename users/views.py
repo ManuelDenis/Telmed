@@ -42,7 +42,7 @@ class CreateUserView(generics.CreateAPIView):
         message = "Thank you for registering on our platform!"
 
         # Create the HTML content of the email with a clickable link
-        activation_link = f"https://telmed-app-ace302dda39b.herokuapp.com/activate/{user.id}/{token}"
+        activation_link = f"{settings.URL}/activate/{user.id}/{token}"
         html_message = f"""
         <html>
         <body>
@@ -94,6 +94,9 @@ class ActivateUserView(View):
         if user is not None and account_activation_token.check_token(user, kwargs['token']):
             user.is_active = True
             user.save()
+            if user.email in settings.MED_LIST:
+                profile = ProfileMed(user_id=user.id)
+                profile.save()
             return redirect('/Dashboard')
         else:
             return redirect(reverse('activation-failure'))
@@ -131,7 +134,7 @@ class CheckEmailExistsView(APIView):
         subject = "Password reset"
         message = "Hello, you request a password reset link"
         message += f"\n\nTo reset password, click the following link:\n"
-        activation_link = f"https://telmed-app-ace302dda39b.herokuapp.com/Reset-password/{user.id}/{token}"
+        activation_link = f"{settings.URL}/Reset-password/{user.id}/{token}"
         message += activation_link
 
         smtp_server = settings.EMAIL_HOST

@@ -58,9 +58,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'https://telmed-app-ace302dda39b.herokuapp.com'
+    'https://www.telmed.pro'
 ]
-CSRF_TRUSTED_ORIGINS = ['https://telmed-app-ace302dda39b.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://www.telmed.pro']
+URL = 'https://www.telmed.pro'
 
 ROOT_URLCONF = 'djknox.urls'
 
@@ -168,3 +169,4 @@ django_heroku.settings(locals())
 FIXTURE_DIRS = [
     os.path.join(BASE_DIR, 'fixtures'),
 ]
+MED_LIST = []
