@@ -20,7 +20,7 @@ const ArticleCreate = () => {
           title: '',
           content: '',
         });
-        window.location.href = '/';
+        window.location.href = '/Category';
     } catch (error) {
         alert(error);
         console.error('Error:', error.response.data);
