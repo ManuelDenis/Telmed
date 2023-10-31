@@ -20,7 +20,7 @@ from rest_framework.routers import DefaultRouter
 from medical.views import CategoryViewSet
 from questions.views import QuestionViewSet, CreateQuestionViewSet, CreateAnswerViewSet, QuestionMedViewSet, \
     QuestionUserViewSet, AnswerVoteCreateView, CreateCommentViewSet
-from users.views import ProfileMedViewSet, CreateProfileMedViewSet, Profile, ProfileUpdate
+from users.views import ProfileMedViewSet, CreateProfileMedViewSet, Profile, ProfileUpdate, CreateArticle
 
 router = DefaultRouter()
 router.register(r'category', CategoryViewSet, basename='category')
@@ -30,6 +30,7 @@ router.register(r'profile-med-create', CreateProfileMedViewSet)
 router.register(r'profile-med', Profile)
 router.register(r'profile-update', ProfileUpdate)
 router.register(r'question-create', CreateQuestionViewSet)
+router.register(r'article-create', CreateArticle)
 router.register(r'answers-create', CreateAnswerViewSet)
 router.register(r'comment_create', CreateCommentViewSet)
 router.register(r'question-med', QuestionMedViewSet, 'question-med')

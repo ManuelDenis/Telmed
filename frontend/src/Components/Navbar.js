@@ -7,6 +7,7 @@ import axios from "axios";
 import Logout from "../Login/Logout";
 import '../App.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import {Dropdown} from "react-bootstrap";
 
 
 function Navbars() {
@@ -86,9 +87,19 @@ function Navbars() {
                 <>
                 {profile.user ? (
                     <>
-              <Nav.Link href="/ProfileMedUpdate">
-                  {userInfo.email.split('@')[0]}
-              </Nav.Link>
+
+    <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Account
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="/ProfileMedUpdate">Profile update</Dropdown.Item>
+        <Dropdown.Item href="/ArticleCreate">Adauga articol</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">{userInfo.email.split('@')[0]}</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+
                     </>
                 ):(
             <Nav.Link href="#">{userInfo.email.split('@')[0]}</Nav.Link>

@@ -15,9 +15,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from djknox import settings
-from users.models import CustomUser, ProfileMed, DoctorVote
+from users.models import CustomUser, ProfileMed, DoctorVote, Article
 from users.serializers import UserSerializer, AuthSerializer, ProfileMedSerializer, DoctorVoteSerializer, \
-    ProfileMedSerializer2
+    ProfileMedSerializer2, ArticleSerializer
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -221,3 +221,16 @@ class Profile(viewsets.ModelViewSet):
         instance = ProfileMed.objects.get(user=userinfo)
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
+
+
+class CreateArticle(viewsets.ModelViewSet):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    permission_classes = [IsAuthenticated]
+    http_method_names = ['post', ]
+
+    def perform_create(self, serializer):
+        userinfo = CustomUser.objects.get(email=self.request.user.email)
+        profile_med = ProfileMed.objects.get(user=userinfo)
+        serializer.validated_data['doctor'] = profile_med
+        serializer.save()

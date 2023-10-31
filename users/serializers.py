@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from questions.models import AnswerVote, Answer
 from questions.serializers import AnswerSerializer
-from users.models import CustomUser, ProfileMed, CommentProfileMed, DoctorVote
+from users.models import CustomUser, ProfileMed, CommentProfileMed, DoctorVote, Article
 
 
 class DoctorVoteSerializer(serializers.ModelSerializer):
@@ -21,6 +21,12 @@ class ProfileMedSerializer2(serializers.ModelSerializer):
     class Meta:
         model = ProfileMed
         fields = ('name', 'category', 'job_title', 'company', 'rating')
+
+
+class ArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ('title', 'content')
 
 
 class UserSerializer(serializers.ModelSerializer):

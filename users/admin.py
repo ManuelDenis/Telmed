@@ -1,5 +1,5 @@
 from django.contrib import admin
-from users.models import CustomUser, ProfileMed, CommentProfileMed, DoctorVote
+from users.models import CustomUser, ProfileMed, CommentProfileMed, DoctorVote, Article
 
 
 class DoctorVoteInline(admin.TabularInline):
@@ -17,6 +17,11 @@ class CommentProfileMedInline(admin.TabularInline):
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
     list_display = ('id', 'email')
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', )
 
 
 @admin.register(ProfileMed)

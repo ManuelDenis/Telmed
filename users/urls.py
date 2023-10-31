@@ -12,6 +12,7 @@ urlpatterns = [
     path("ProfileMedList/", Front.as_view()),
     path("ProfileMedRegister/", Front.as_view()),
     path("ProfileMedUpdate/", Front.as_view()),
+    path("ArticleCreate/", Front.as_view()),
     path("Login/", Front.as_view()),
     path("ConfirmationSent/", Front.as_view()),
     path("PasswordReset/", Front.as_view()),

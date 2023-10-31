@@ -21,6 +21,7 @@ import ProfileMEdRegister from "./Medical/ProfileMEdRegister";
 import ProfileMedUpdate from "./Medical/ProfileMedUpdate";
 import ProfileMed from "./Medical/ProfileMed";
 import QuestionCreate from "./Medical/QuestionCreate";
+import ArticleCreate from "./Article/ArticleCreate";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/ProfileMed" element={<ProfileMed/>} />
         <Route path="/ProfileMedRegister" element={<ProfileMEdRegister/>} />
         <Route path="/ProfileMedUpdate" element={<ProfileMedUpdate/>} />
+        <Route path="/ArticleCreate" element={<ArticleCreate/>} />
         <Route path="/Category" element={<Category/>} />
         <Route path="/Question" element={<Question/>} />
         <Route path="/QuestionCreate" element={<QuestionCreate/>} />
