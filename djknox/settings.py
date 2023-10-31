@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'medical.apps.MedicalConfig',
     'questions.apps.QuestionsConfig',
+    'cloudinary',
 ]
 
 AUTH_USER_MODEL = "users.CustomUser"
